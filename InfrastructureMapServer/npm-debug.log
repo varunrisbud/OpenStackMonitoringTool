@@ -1,0 +1,184 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs', '/usr/bin/npm', 'install' ]
+2 info using npm@1.3.10
+3 info using node@v0.10.25
+4 verbose readDependencies using package.json deps
+5 verbose install where, deps [ '/home/student/InfraCode/InfrastructureMapServer',
+5 verbose install   [ 'body-parser',
+5 verbose install     'cookie-parser',
+5 verbose install     'debug',
+5 verbose install     'express',
+5 verbose install     'jade',
+5 verbose install     'morgan',
+5 verbose install     'serve-favicon',
+5 verbose install     'node-rest-client',
+5 verbose install     'request',
+5 verbose install     'fs',
+5 verbose install     'readline',
+5 verbose install     'stream' ] ]
+6 info preinstall InfrastructureMapServer@0.0.0
+7 warn package.json asap@1.0.0 No repository field.
+8 warn package.json css@1.0.8 No repository field.
+9 warn package.json css-parse@1.0.4 No repository field.
+10 warn package.json css-stringify@1.0.5 No repository field.
+11 verbose readDependencies using package.json deps
+12 verbose already installed skipping debug@~2.2.0 /home/student/InfraCode/InfrastructureMapServer
+13 verbose already installed skipping cookie-parser@~1.3.5 /home/student/InfraCode/InfrastructureMapServer
+14 verbose already installed skipping express@~4.13.1 /home/student/InfraCode/InfrastructureMapServer
+15 verbose already installed skipping jade@~1.11.0 /home/student/InfraCode/InfrastructureMapServer
+16 verbose already installed skipping morgan@~1.6.1 /home/student/InfraCode/InfrastructureMapServer
+17 verbose already installed skipping serve-favicon@~2.3.0 /home/student/InfraCode/InfrastructureMapServer
+18 verbose already installed skipping node-rest-client@~1.5.1 /home/student/InfraCode/InfrastructureMapServer
+19 verbose already installed skipping request@~2.67.0 /home/student/InfraCode/InfrastructureMapServer
+20 verbose cache add [ 'fs@~0.1.7', null ]
+21 verbose cache add name=undefined spec="fs@~0.1.7" args=["fs@~0.1.7",null]
+22 verbose parsed url { protocol: null,
+22 verbose parsed url   slashes: null,
+22 verbose parsed url   auth: null,
+22 verbose parsed url   host: null,
+22 verbose parsed url   port: null,
+22 verbose parsed url   hostname: null,
+22 verbose parsed url   hash: null,
+22 verbose parsed url   search: null,
+22 verbose parsed url   query: null,
+22 verbose parsed url   pathname: 'fs@~0.1.7',
+22 verbose parsed url   path: 'fs@~0.1.7',
+22 verbose parsed url   href: 'fs@~0.1.7' }
+23 verbose cache add name="fs" spec="~0.1.7" args=["fs","~0.1.7"]
+24 verbose parsed url { protocol: null,
+24 verbose parsed url   slashes: null,
+24 verbose parsed url   auth: null,
+24 verbose parsed url   host: null,
+24 verbose parsed url   port: null,
+24 verbose parsed url   hostname: null,
+24 verbose parsed url   hash: null,
+24 verbose parsed url   search: null,
+24 verbose parsed url   query: null,
+24 verbose parsed url   pathname: '~0.1.7',
+24 verbose parsed url   path: '~0.1.7',
+24 verbose parsed url   href: '~0.1.7' }
+25 verbose addNamed [ 'fs', '~0.1.7' ]
+26 verbose addNamed [ null, '>=0.1.7-0 <0.2.0-0' ]
+27 verbose cache add [ 'readline@~1.3.0', null ]
+28 verbose cache add name=undefined spec="readline@~1.3.0" args=["readline@~1.3.0",null]
+29 verbose parsed url { protocol: null,
+29 verbose parsed url   slashes: null,
+29 verbose parsed url   auth: null,
+29 verbose parsed url   host: null,
+29 verbose parsed url   port: null,
+29 verbose parsed url   hostname: null,
+29 verbose parsed url   hash: null,
+29 verbose parsed url   search: null,
+29 verbose parsed url   query: null,
+29 verbose parsed url   pathname: 'readline@~1.3.0',
+29 verbose parsed url   path: 'readline@~1.3.0',
+29 verbose parsed url   href: 'readline@~1.3.0' }
+30 verbose cache add name="readline" spec="~1.3.0" args=["readline","~1.3.0"]
+31 verbose parsed url { protocol: null,
+31 verbose parsed url   slashes: null,
+31 verbose parsed url   auth: null,
+31 verbose parsed url   host: null,
+31 verbose parsed url   port: null,
+31 verbose parsed url   hostname: null,
+31 verbose parsed url   hash: null,
+31 verbose parsed url   search: null,
+31 verbose parsed url   query: null,
+31 verbose parsed url   pathname: '~1.3.0',
+31 verbose parsed url   path: '~1.3.0',
+31 verbose parsed url   href: '~1.3.0' }
+32 verbose addNamed [ 'readline', '~1.3.0' ]
+33 verbose addNamed [ null, '>=1.3.0-0 <1.4.0-0' ]
+34 verbose cache add [ 'stream@~0.0.2', null ]
+35 verbose cache add name=undefined spec="stream@~0.0.2" args=["stream@~0.0.2",null]
+36 verbose parsed url { protocol: null,
+36 verbose parsed url   slashes: null,
+36 verbose parsed url   auth: null,
+36 verbose parsed url   host: null,
+36 verbose parsed url   port: null,
+36 verbose parsed url   hostname: null,
+36 verbose parsed url   hash: null,
+36 verbose parsed url   search: null,
+36 verbose parsed url   query: null,
+36 verbose parsed url   pathname: 'stream@~0.0.2',
+36 verbose parsed url   path: 'stream@~0.0.2',
+36 verbose parsed url   href: 'stream@~0.0.2' }
+37 verbose cache add name="stream" spec="~0.0.2" args=["stream","~0.0.2"]
+38 verbose parsed url { protocol: null,
+38 verbose parsed url   slashes: null,
+38 verbose parsed url   auth: null,
+38 verbose parsed url   host: null,
+38 verbose parsed url   port: null,
+38 verbose parsed url   hostname: null,
+38 verbose parsed url   hash: null,
+38 verbose parsed url   search: null,
+38 verbose parsed url   query: null,
+38 verbose parsed url   pathname: '~0.0.2',
+38 verbose parsed url   path: '~0.0.2',
+38 verbose parsed url   href: '~0.0.2' }
+39 verbose addNamed [ 'stream', '~0.0.2' ]
+40 verbose addNamed [ null, '>=0.0.2-0 <0.1.0-0' ]
+41 verbose already installed skipping body-parser@~1.13.2 /home/student/InfraCode/InfrastructureMapServer
+42 silly lockFile 4ae39073-fs-0-1-7 fs@~0.1.7
+43 verbose lock fs@~0.1.7 /home/student/.npm/4ae39073-fs-0-1-7.lock
+44 silly lockFile 2e021191-readline-1-3-0 readline@~1.3.0
+45 verbose lock readline@~1.3.0 /home/student/.npm/2e021191-readline-1-3-0.lock
+46 silly lockFile b8d6e9bc-stream-0-0-2 stream@~0.0.2
+47 verbose lock stream@~0.0.2 /home/student/.npm/b8d6e9bc-stream-0-0-2.lock
+48 silly addNameRange { name: 'fs', range: '>=0.1.7-0 <0.2.0-0', hasData: false }
+49 silly addNameRange { name: 'readline', range: '>=1.3.0-0 <1.4.0-0', hasData: false }
+50 silly addNameRange { name: 'stream', range: '>=0.0.2-0 <0.1.0-0', hasData: false }
+51 verbose url raw fs
+52 verbose url resolving [ 'https://registry.npmjs.org/', './fs' ]
+53 verbose url resolved https://registry.npmjs.org/fs
+54 info trying registry request attempt 1 at 14:15:48
+55 verbose etag "E84CHO0NWJVHKUWB1LNL0N7HZ"
+56 http GET https://registry.npmjs.org/fs
+57 verbose url raw readline
+58 verbose url resolving [ 'https://registry.npmjs.org/', './readline' ]
+59 verbose url resolved https://registry.npmjs.org/readline
+60 info trying registry request attempt 1 at 14:15:48
+61 verbose etag "1BTV587ANQSCM50QXBTC0PUCW"
+62 http GET https://registry.npmjs.org/readline
+63 verbose url raw stream
+64 verbose url resolving [ 'https://registry.npmjs.org/', './stream' ]
+65 verbose url resolved https://registry.npmjs.org/stream
+66 info trying registry request attempt 1 at 14:15:48
+67 verbose etag "6K4G8R7KQUCINJ48Q97QINE85"
+68 http GET https://registry.npmjs.org/stream
+69 http 304 https://registry.npmjs.org/fs
+70 silly registry.get cb [ 304,
+70 silly registry.get   { date: 'Tue, 22 Mar 2016 21:15:48 GMT',
+70 silly registry.get     via: '1.1 varnish',
+70 silly registry.get     'cache-control': 'max-age=300',
+70 silly registry.get     etag: '"E84CHO0NWJVHKUWB1LNL0N7HZ"',
+70 silly registry.get     age: '43',
+70 silly registry.get     connection: 'keep-alive',
+70 silly registry.get     'x-served-by': 'cache-sjc3123-SJC',
+70 silly registry.get     'x-cache': 'HIT',
+70 silly registry.get     'x-cache-hits': '6',
+70 silly registry.get     'x-timer': 'S1458681348.580452,VS0,VE0',
+70 silly registry.get     vary: 'Accept' } ]
+71 verbose etag fs from cache
+72 silly addNameRange number 2 { name: 'fs', range: '>=0.1.7-0 <0.2.0-0', hasData: true }
+73 silly addNameRange versions [ 'fs', [ '0.0.0', '0.0.2' ] ]
+74 silly lockFile 4ae39073-fs-0-1-7 fs@~0.1.7
+75 silly lockFile 4ae39073-fs-0-1-7 fs@~0.1.7
+76 error Error: No compatible version found: fs@'>=0.1.7-0 <0.2.0-0'
+76 error Valid install targets:
+76 error ["0.0.0","0.0.2"]
+76 error     at installTargetsError (/usr/share/npm/lib/cache.js:719:10)
+76 error     at next (/usr/share/npm/lib/cache.js:698:17)
+76 error     at /usr/share/npm/lib/cache.js:675:5
+76 error     at saved (/usr/share/npm/node_modules/npm-registry-client/lib/get.js:142:7)
+76 error     at /usr/lib/nodejs/graceful-fs/polyfills.js:133:7
+76 error     at Object.oncomplete (fs.js:107:15)
+77 error If you need help, you may report this log at:
+77 error     <http://github.com/isaacs/npm/issues>
+77 error or email it to:
+77 error     <npm-@googlegroups.com>
+78 error System Linux 3.13.0-77-generic
+79 error command "/usr/bin/nodejs" "/usr/bin/npm" "install"
+80 error cwd /home/student/InfraCode/InfrastructureMapServer
+81 error node -v v0.10.25
+82 error npm -v 1.3.10
+83 verbose exit [ 1, true ]
