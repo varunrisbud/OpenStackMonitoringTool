@@ -5,10 +5,6 @@
 angular.module('opsmonitor', ['ui.grid', 'ui.grid.edit', 'ui.grid.rowEdit', 'ui.grid.selection', 'ui.bootstrap'])
     .controller('novaController', function ($scope, $http) {
 
-        $http.get('http://130.65.159.170/logs/novascheduler/').success(function (res) {
-            $scope.gridOptions.data = res.hits.hits;
-        });
-
         $scope.gridOptions = {
             enableCellEditOnFocus: true,
             enableFiltering: true
@@ -42,6 +38,15 @@ angular.module('opsmonitor', ['ui.grid', 'ui.grid.edit', 'ui.grid.rowEdit', 'ui.
                 "_source.loglevel": "",
                 "_source.name": "",
                 "_source.requestid[0]": ""
+            });
+        }
+
+        $scope.getValue = function(index) {
+            console.log(index);
+            var url = 'http://130.65.159.170/logs/' + index + '/';
+            console.log(url);
+            $http.get(url).success(function (res) {
+                $scope.gridOptions.data = res.hits.hits;
             });
         }
     });

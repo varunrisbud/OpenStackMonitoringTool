@@ -16,13 +16,13 @@
     <script src="/javascripts/novaController.js"></script>
 
 </head>
-<body ng-app="opsmonitor" ng-controller="novaController">
+<body ng-app="opsmonitor" ng-controller="novaController" data-ng-init="getValue('novascheduler')">
 <div>
     <div>
-        <button type="button" class="btn btn-default" ng-click="addData()">
+        <button type="button" class="btn btn-default" ng-click="getValue('novaapi')">
             Add Row
         </button>
-        <button type="button" class="btn btn-default" ng-click="deleteData()">
+        <button type="button" class="btn btn-default" ng-click="getValue('glanceregistry')">
             Delete Row
         </button>
     </div>
