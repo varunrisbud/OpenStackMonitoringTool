@@ -1,184 +1,371 @@
 0 info it worked if it ends with ok
-1 verbose cli [ '/usr/bin/nodejs', '/usr/bin/npm', 'install' ]
-2 info using npm@1.3.10
-3 info using node@v0.10.25
-4 verbose readDependencies using package.json deps
-5 verbose install where, deps [ '/home/student/InfraCode/InfrastructureMapServer',
-5 verbose install   [ 'body-parser',
-5 verbose install     'cookie-parser',
-5 verbose install     'debug',
-5 verbose install     'express',
-5 verbose install     'jade',
-5 verbose install     'morgan',
-5 verbose install     'serve-favicon',
-5 verbose install     'node-rest-client',
-5 verbose install     'request',
-5 verbose install     'fs',
-5 verbose install     'readline',
-5 verbose install     'stream' ] ]
-6 info preinstall InfrastructureMapServer@0.0.0
-7 warn package.json asap@1.0.0 No repository field.
-8 warn package.json css@1.0.8 No repository field.
-9 warn package.json css-parse@1.0.4 No repository field.
-10 warn package.json css-stringify@1.0.5 No repository field.
-11 verbose readDependencies using package.json deps
-12 verbose already installed skipping debug@~2.2.0 /home/student/InfraCode/InfrastructureMapServer
-13 verbose already installed skipping cookie-parser@~1.3.5 /home/student/InfraCode/InfrastructureMapServer
-14 verbose already installed skipping express@~4.13.1 /home/student/InfraCode/InfrastructureMapServer
-15 verbose already installed skipping jade@~1.11.0 /home/student/InfraCode/InfrastructureMapServer
-16 verbose already installed skipping morgan@~1.6.1 /home/student/InfraCode/InfrastructureMapServer
-17 verbose already installed skipping serve-favicon@~2.3.0 /home/student/InfraCode/InfrastructureMapServer
-18 verbose already installed skipping node-rest-client@~1.5.1 /home/student/InfraCode/InfrastructureMapServer
-19 verbose already installed skipping request@~2.67.0 /home/student/InfraCode/InfrastructureMapServer
-20 verbose cache add [ 'fs@~0.1.7', null ]
-21 verbose cache add name=undefined spec="fs@~0.1.7" args=["fs@~0.1.7",null]
-22 verbose parsed url { protocol: null,
-22 verbose parsed url   slashes: null,
-22 verbose parsed url   auth: null,
-22 verbose parsed url   host: null,
-22 verbose parsed url   port: null,
-22 verbose parsed url   hostname: null,
-22 verbose parsed url   hash: null,
-22 verbose parsed url   search: null,
-22 verbose parsed url   query: null,
-22 verbose parsed url   pathname: 'fs@~0.1.7',
-22 verbose parsed url   path: 'fs@~0.1.7',
-22 verbose parsed url   href: 'fs@~0.1.7' }
-23 verbose cache add name="fs" spec="~0.1.7" args=["fs","~0.1.7"]
-24 verbose parsed url { protocol: null,
-24 verbose parsed url   slashes: null,
-24 verbose parsed url   auth: null,
-24 verbose parsed url   host: null,
-24 verbose parsed url   port: null,
-24 verbose parsed url   hostname: null,
-24 verbose parsed url   hash: null,
-24 verbose parsed url   search: null,
-24 verbose parsed url   query: null,
-24 verbose parsed url   pathname: '~0.1.7',
-24 verbose parsed url   path: '~0.1.7',
-24 verbose parsed url   href: '~0.1.7' }
-25 verbose addNamed [ 'fs', '~0.1.7' ]
-26 verbose addNamed [ null, '>=0.1.7-0 <0.2.0-0' ]
-27 verbose cache add [ 'readline@~1.3.0', null ]
-28 verbose cache add name=undefined spec="readline@~1.3.0" args=["readline@~1.3.0",null]
-29 verbose parsed url { protocol: null,
-29 verbose parsed url   slashes: null,
-29 verbose parsed url   auth: null,
-29 verbose parsed url   host: null,
-29 verbose parsed url   port: null,
-29 verbose parsed url   hostname: null,
-29 verbose parsed url   hash: null,
-29 verbose parsed url   search: null,
-29 verbose parsed url   query: null,
-29 verbose parsed url   pathname: 'readline@~1.3.0',
-29 verbose parsed url   path: 'readline@~1.3.0',
-29 verbose parsed url   href: 'readline@~1.3.0' }
-30 verbose cache add name="readline" spec="~1.3.0" args=["readline","~1.3.0"]
-31 verbose parsed url { protocol: null,
-31 verbose parsed url   slashes: null,
-31 verbose parsed url   auth: null,
-31 verbose parsed url   host: null,
-31 verbose parsed url   port: null,
-31 verbose parsed url   hostname: null,
-31 verbose parsed url   hash: null,
-31 verbose parsed url   search: null,
-31 verbose parsed url   query: null,
-31 verbose parsed url   pathname: '~1.3.0',
-31 verbose parsed url   path: '~1.3.0',
-31 verbose parsed url   href: '~1.3.0' }
-32 verbose addNamed [ 'readline', '~1.3.0' ]
-33 verbose addNamed [ null, '>=1.3.0-0 <1.4.0-0' ]
-34 verbose cache add [ 'stream@~0.0.2', null ]
-35 verbose cache add name=undefined spec="stream@~0.0.2" args=["stream@~0.0.2",null]
-36 verbose parsed url { protocol: null,
-36 verbose parsed url   slashes: null,
-36 verbose parsed url   auth: null,
-36 verbose parsed url   host: null,
-36 verbose parsed url   port: null,
-36 verbose parsed url   hostname: null,
-36 verbose parsed url   hash: null,
-36 verbose parsed url   search: null,
-36 verbose parsed url   query: null,
-36 verbose parsed url   pathname: 'stream@~0.0.2',
-36 verbose parsed url   path: 'stream@~0.0.2',
-36 verbose parsed url   href: 'stream@~0.0.2' }
-37 verbose cache add name="stream" spec="~0.0.2" args=["stream","~0.0.2"]
-38 verbose parsed url { protocol: null,
-38 verbose parsed url   slashes: null,
-38 verbose parsed url   auth: null,
-38 verbose parsed url   host: null,
-38 verbose parsed url   port: null,
-38 verbose parsed url   hostname: null,
-38 verbose parsed url   hash: null,
-38 verbose parsed url   search: null,
-38 verbose parsed url   query: null,
-38 verbose parsed url   pathname: '~0.0.2',
-38 verbose parsed url   path: '~0.0.2',
-38 verbose parsed url   href: '~0.0.2' }
-39 verbose addNamed [ 'stream', '~0.0.2' ]
-40 verbose addNamed [ null, '>=0.0.2-0 <0.1.0-0' ]
-41 verbose already installed skipping body-parser@~1.13.2 /home/student/InfraCode/InfrastructureMapServer
-42 silly lockFile 4ae39073-fs-0-1-7 fs@~0.1.7
-43 verbose lock fs@~0.1.7 /home/student/.npm/4ae39073-fs-0-1-7.lock
-44 silly lockFile 2e021191-readline-1-3-0 readline@~1.3.0
-45 verbose lock readline@~1.3.0 /home/student/.npm/2e021191-readline-1-3-0.lock
-46 silly lockFile b8d6e9bc-stream-0-0-2 stream@~0.0.2
-47 verbose lock stream@~0.0.2 /home/student/.npm/b8d6e9bc-stream-0-0-2.lock
-48 silly addNameRange { name: 'fs', range: '>=0.1.7-0 <0.2.0-0', hasData: false }
-49 silly addNameRange { name: 'readline', range: '>=1.3.0-0 <1.4.0-0', hasData: false }
-50 silly addNameRange { name: 'stream', range: '>=0.0.2-0 <0.1.0-0', hasData: false }
-51 verbose url raw fs
-52 verbose url resolving [ 'https://registry.npmjs.org/', './fs' ]
-53 verbose url resolved https://registry.npmjs.org/fs
-54 info trying registry request attempt 1 at 14:15:48
-55 verbose etag "E84CHO0NWJVHKUWB1LNL0N7HZ"
-56 http GET https://registry.npmjs.org/fs
-57 verbose url raw readline
-58 verbose url resolving [ 'https://registry.npmjs.org/', './readline' ]
-59 verbose url resolved https://registry.npmjs.org/readline
-60 info trying registry request attempt 1 at 14:15:48
-61 verbose etag "1BTV587ANQSCM50QXBTC0PUCW"
-62 http GET https://registry.npmjs.org/readline
-63 verbose url raw stream
-64 verbose url resolving [ 'https://registry.npmjs.org/', './stream' ]
-65 verbose url resolved https://registry.npmjs.org/stream
-66 info trying registry request attempt 1 at 14:15:48
-67 verbose etag "6K4G8R7KQUCINJ48Q97QINE85"
-68 http GET https://registry.npmjs.org/stream
-69 http 304 https://registry.npmjs.org/fs
-70 silly registry.get cb [ 304,
-70 silly registry.get   { date: 'Tue, 22 Mar 2016 21:15:48 GMT',
-70 silly registry.get     via: '1.1 varnish',
-70 silly registry.get     'cache-control': 'max-age=300',
-70 silly registry.get     etag: '"E84CHO0NWJVHKUWB1LNL0N7HZ"',
-70 silly registry.get     age: '43',
-70 silly registry.get     connection: 'keep-alive',
-70 silly registry.get     'x-served-by': 'cache-sjc3123-SJC',
-70 silly registry.get     'x-cache': 'HIT',
-70 silly registry.get     'x-cache-hits': '6',
-70 silly registry.get     'x-timer': 'S1458681348.580452,VS0,VE0',
-70 silly registry.get     vary: 'Accept' } ]
-71 verbose etag fs from cache
-72 silly addNameRange number 2 { name: 'fs', range: '>=0.1.7-0 <0.2.0-0', hasData: true }
-73 silly addNameRange versions [ 'fs', [ '0.0.0', '0.0.2' ] ]
-74 silly lockFile 4ae39073-fs-0-1-7 fs@~0.1.7
-75 silly lockFile 4ae39073-fs-0-1-7 fs@~0.1.7
-76 error Error: No compatible version found: fs@'>=0.1.7-0 <0.2.0-0'
-76 error Valid install targets:
-76 error ["0.0.0","0.0.2"]
-76 error     at installTargetsError (/usr/share/npm/lib/cache.js:719:10)
-76 error     at next (/usr/share/npm/lib/cache.js:698:17)
-76 error     at /usr/share/npm/lib/cache.js:675:5
-76 error     at saved (/usr/share/npm/node_modules/npm-registry-client/lib/get.js:142:7)
-76 error     at /usr/lib/nodejs/graceful-fs/polyfills.js:133:7
-76 error     at Object.oncomplete (fs.js:107:15)
-77 error If you need help, you may report this log at:
-77 error     <http://github.com/isaacs/npm/issues>
-77 error or email it to:
-77 error     <npm-@googlegroups.com>
-78 error System Linux 3.13.0-77-generic
-79 error command "/usr/bin/nodejs" "/usr/bin/npm" "install"
-80 error cwd /home/student/InfraCode/InfrastructureMapServer
-81 error node -v v0.10.25
-82 error npm -v 1.3.10
-83 verbose exit [ 1, true ]
+1 verbose cli [ '/usr/local/Cellar/node/5.0.0/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install' ]
+2 info using npm@3.3.9
+3 info using node@v5.0.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly install normalizeTree
+8 silly loadCurrentTree Finishing
+9 silly loadIdealTree Starting
+10 silly install loadIdealTree
+11 silly cloneCurrentTree Starting
+12 silly install cloneCurrentTreeToIdealTree
+13 silly cloneCurrentTree Finishing
+14 silly loadShrinkwrap Starting
+15 silly install loadShrinkwrap
+16 silly loadShrinkwrap Finishing
+17 silly loadAllDepsIntoIdealTree Starting
+18 silly install loadAllDepsIntoIdealTree
+19 silly fetchNamedPackageData fs
+20 silly mapToRegistry name fs
+21 silly mapToRegistry using default registry
+22 silly mapToRegistry registry https://registry.npmjs.org/
+23 silly mapToRegistry uri https://registry.npmjs.org/fs
+24 silly fetchNamedPackageData readline
+25 silly mapToRegistry name readline
+26 silly mapToRegistry using default registry
+27 silly mapToRegistry registry https://registry.npmjs.org/
+28 silly mapToRegistry uri https://registry.npmjs.org/readline
+29 silly fetchNamedPackageData stream
+30 silly mapToRegistry name stream
+31 silly mapToRegistry using default registry
+32 silly mapToRegistry registry https://registry.npmjs.org/
+33 silly mapToRegistry uri https://registry.npmjs.org/stream
+34 silly fetchNamedPackageData ejs
+35 silly mapToRegistry name ejs
+36 silly mapToRegistry using default registry
+37 silly mapToRegistry registry https://registry.npmjs.org/
+38 silly mapToRegistry uri https://registry.npmjs.org/ejs
+39 verbose request uri https://registry.npmjs.org/stream
+40 verbose request no auth needed
+41 info attempt registry request try #1 at 3:09:20 PM
+42 verbose request id 488e6d5102b9196e
+43 verbose etag "6K4G8R7KQUCINJ48Q97QINE85"
+44 http request GET https://registry.npmjs.org/stream
+45 verbose request uri https://registry.npmjs.org/fs
+46 verbose request no auth needed
+47 info attempt registry request try #1 at 3:09:20 PM
+48 verbose etag "E84CHO0NWJVHKUWB1LNL0N7HZ"
+49 http request GET https://registry.npmjs.org/fs
+50 verbose request uri https://registry.npmjs.org/readline
+51 verbose request no auth needed
+52 info attempt registry request try #1 at 3:09:20 PM
+53 verbose etag "1BTV587ANQSCM50QXBTC0PUCW"
+54 http request GET https://registry.npmjs.org/readline
+55 verbose request uri https://registry.npmjs.org/ejs
+56 verbose request no auth needed
+57 info attempt registry request try #1 at 3:09:20 PM
+58 verbose etag "5YVM8QNHK89Q9SSQG0W84EFJS"
+59 http request GET https://registry.npmjs.org/ejs
+60 http 200 https://registry.npmjs.org/fs
+61 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+61 verbose headers   etag: '"2NJP540Y3SOKN814BS3CLZTMB"',
+61 verbose headers   'content-type': 'application/json',
+61 verbose headers   'cache-control': 'max-age=300',
+61 verbose headers   'content-length': '1676',
+61 verbose headers   'accept-ranges': 'bytes',
+61 verbose headers   date: 'Tue, 12 Apr 2016 22:09:20 GMT',
+61 verbose headers   via: '1.1 varnish',
+61 verbose headers   age: '119',
+61 verbose headers   connection: 'keep-alive',
+61 verbose headers   'x-served-by': 'cache-lax1423-LAX',
+61 verbose headers   'x-cache': 'HIT',
+61 verbose headers   'x-cache-hits': '1',
+61 verbose headers   'x-timer': 'S1460498960.734573,VS0,VE0',
+61 verbose headers   vary: 'Accept-Encoding' }
+62 silly get cb [ 200,
+62 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+62 silly get     etag: '"2NJP540Y3SOKN814BS3CLZTMB"',
+62 silly get     'content-type': 'application/json',
+62 silly get     'cache-control': 'max-age=300',
+62 silly get     'content-length': '1676',
+62 silly get     'accept-ranges': 'bytes',
+62 silly get     date: 'Tue, 12 Apr 2016 22:09:20 GMT',
+62 silly get     via: '1.1 varnish',
+62 silly get     age: '119',
+62 silly get     connection: 'keep-alive',
+62 silly get     'x-served-by': 'cache-lax1423-LAX',
+62 silly get     'x-cache': 'HIT',
+62 silly get     'x-cache-hits': '1',
+62 silly get     'x-timer': 'S1460498960.734573,VS0,VE0',
+62 silly get     vary: 'Accept-Encoding' } ]
+63 verbose get saving fs to /Users/sameer/.npm/registry.npmjs.org/fs/.cache.json
+64 http 304 https://registry.npmjs.org/stream
+65 verbose headers { date: 'Tue, 12 Apr 2016 22:09:20 GMT',
+65 verbose headers   via: '1.1 varnish',
+65 verbose headers   'cache-control': 'max-age=300',
+65 verbose headers   etag: '"6K4G8R7KQUCINJ48Q97QINE85"',
+65 verbose headers   age: '5',
+65 verbose headers   connection: 'keep-alive',
+65 verbose headers   'x-served-by': 'cache-lax1431-LAX',
+65 verbose headers   'x-cache': 'HIT',
+65 verbose headers   'x-cache-hits': '1',
+65 verbose headers   'x-timer': 'S1460498960.737216,VS0,VE0',
+65 verbose headers   vary: 'Accept-Encoding' }
+66 silly get cb [ 304,
+66 silly get   { date: 'Tue, 12 Apr 2016 22:09:20 GMT',
+66 silly get     via: '1.1 varnish',
+66 silly get     'cache-control': 'max-age=300',
+66 silly get     etag: '"6K4G8R7KQUCINJ48Q97QINE85"',
+66 silly get     age: '5',
+66 silly get     connection: 'keep-alive',
+66 silly get     'x-served-by': 'cache-lax1431-LAX',
+66 silly get     'x-cache': 'HIT',
+66 silly get     'x-cache-hits': '1',
+66 silly get     'x-timer': 'S1460498960.737216,VS0,VE0',
+66 silly get     vary: 'Accept-Encoding' } ]
+67 verbose etag https://registry.npmjs.org/stream from cache
+68 verbose get saving stream to /Users/sameer/.npm/registry.npmjs.org/stream/.cache.json
+69 http 200 https://registry.npmjs.org/readline
+70 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+70 verbose headers   etag: '"AY0BL1YXQ5R2T9FX168Z35WUO"',
+70 verbose headers   'content-type': 'application/json',
+70 verbose headers   'content-encoding': 'gzip',
+70 verbose headers   'cache-control': 'max-age=300',
+70 verbose headers   'content-length': '3171',
+70 verbose headers   'accept-ranges': 'bytes',
+70 verbose headers   date: 'Tue, 12 Apr 2016 22:09:20 GMT',
+70 verbose headers   via: '1.1 varnish',
+70 verbose headers   age: '242',
+70 verbose headers   connection: 'keep-alive',
+70 verbose headers   'x-served-by': 'cache-lax1421-LAX',
+70 verbose headers   'x-cache': 'HIT',
+70 verbose headers   'x-cache-hits': '1',
+70 verbose headers   'x-timer': 'S1460498960.740639,VS0,VE0',
+70 verbose headers   vary: 'Accept-Encoding' }
+71 silly get cb [ 200,
+71 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+71 silly get     etag: '"AY0BL1YXQ5R2T9FX168Z35WUO"',
+71 silly get     'content-type': 'application/json',
+71 silly get     'content-encoding': 'gzip',
+71 silly get     'cache-control': 'max-age=300',
+71 silly get     'content-length': '3171',
+71 silly get     'accept-ranges': 'bytes',
+71 silly get     date: 'Tue, 12 Apr 2016 22:09:20 GMT',
+71 silly get     via: '1.1 varnish',
+71 silly get     age: '242',
+71 silly get     connection: 'keep-alive',
+71 silly get     'x-served-by': 'cache-lax1421-LAX',
+71 silly get     'x-cache': 'HIT',
+71 silly get     'x-cache-hits': '1',
+71 silly get     'x-timer': 'S1460498960.740639,VS0,VE0',
+71 silly get     vary: 'Accept-Encoding' } ]
+72 verbose get saving readline to /Users/sameer/.npm/registry.npmjs.org/readline/.cache.json
+73 http 200 https://registry.npmjs.org/ejs
+74 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+74 verbose headers   etag: '"32KT4Q1DSULK8XY7XHLL8CXOS"',
+74 verbose headers   'content-type': 'application/json',
+74 verbose headers   'content-encoding': 'gzip',
+74 verbose headers   'cache-control': 'max-age=300',
+74 verbose headers   'content-length': '9121',
+74 verbose headers   'accept-ranges': 'bytes',
+74 verbose headers   date: 'Tue, 12 Apr 2016 22:09:20 GMT',
+74 verbose headers   via: '1.1 varnish',
+74 verbose headers   age: '200',
+74 verbose headers   connection: 'keep-alive',
+74 verbose headers   'x-served-by': 'cache-lax1434-LAX',
+74 verbose headers   'x-cache': 'HIT',
+74 verbose headers   'x-cache-hits': '1',
+74 verbose headers   'x-timer': 'S1460498960.736095,VS0,VE0',
+74 verbose headers   vary: 'Accept-Encoding' }
+75 silly get cb [ 200,
+75 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+75 silly get     etag: '"32KT4Q1DSULK8XY7XHLL8CXOS"',
+75 silly get     'content-type': 'application/json',
+75 silly get     'content-encoding': 'gzip',
+75 silly get     'cache-control': 'max-age=300',
+75 silly get     'content-length': '9121',
+75 silly get     'accept-ranges': 'bytes',
+75 silly get     date: 'Tue, 12 Apr 2016 22:09:20 GMT',
+75 silly get     via: '1.1 varnish',
+75 silly get     age: '200',
+75 silly get     connection: 'keep-alive',
+75 silly get     'x-served-by': 'cache-lax1434-LAX',
+75 silly get     'x-cache': 'HIT',
+75 silly get     'x-cache-hits': '1',
+75 silly get     'x-timer': 'S1460498960.736095,VS0,VE0',
+75 silly get     vary: 'Accept-Encoding' } ]
+76 verbose get saving ejs to /Users/sameer/.npm/registry.npmjs.org/ejs/.cache.json
+77 silly resolveWithNewModule stream@0.0.2 checking installable status
+78 silly cache add args [ 'stream@~0.0.2', null ]
+79 verbose cache add spec stream@~0.0.2
+80 silly cache add parsed spec Result {
+80 silly cache add   raw: 'stream@~0.0.2',
+80 silly cache add   scope: null,
+80 silly cache add   name: 'stream',
+80 silly cache add   rawSpec: '~0.0.2',
+80 silly cache add   spec: '>=0.0.2 <0.1.0',
+80 silly cache add   type: 'range' }
+81 silly addNamed stream@>=0.0.2 <0.1.0
+82 verbose addNamed ">=0.0.2 <0.1.0" is a valid semver range for stream
+83 silly addNameRange { name: 'stream', range: '>=0.0.2 <0.1.0', hasData: false }
+84 silly mapToRegistry name stream
+85 silly mapToRegistry using default registry
+86 silly mapToRegistry registry https://registry.npmjs.org/
+87 silly mapToRegistry uri https://registry.npmjs.org/stream
+88 verbose addNameRange registry:https://registry.npmjs.org/stream not in flight; fetching
+89 silly fetchPackageMetaData Error: No compatible version found: fs@~0.1.7
+89 silly fetchPackageMetaData Valid install targets:
+89 silly fetchPackageMetaData 0.0.2, 0.0.0
+89 silly fetchPackageMetaData
+89 silly fetchPackageMetaData     at pickVersionFromRegistryDocument (/usr/local/lib/node_modules/npm/lib/fetch-package-metadata.js:146:16)
+89 silly fetchPackageMetaData     at /usr/local/lib/node_modules/npm/node_modules/iferr/index.js:13:50
+89 silly fetchPackageMetaData     at /usr/local/lib/node_modules/npm/lib/utils/pulse-till-done.js:19:8
+89 silly fetchPackageMetaData     at saved (/usr/local/lib/node_modules/npm/lib/cache/caching-client.js:168:7)
+89 silly fetchPackageMetaData     at /usr/local/lib/node_modules/npm/node_modules/graceful-fs/polyfills.js:210:7
+89 silly fetchPackageMetaData     at FSReqWrap.oncomplete (fs.js:82:15)
+89 silly fetchPackageMetaData  error for fs@~0.1.7 [Error: No compatible version found: fs@~0.1.7
+89 silly fetchPackageMetaData Valid install targets:
+89 silly fetchPackageMetaData 0.0.2, 0.0.0
+89 silly fetchPackageMetaData ]
+90 silly resolveWithNewModule readline@1.3.0 checking installable status
+91 silly cache add args [ 'readline@~1.3.0', null ]
+92 verbose cache add spec readline@~1.3.0
+93 silly cache add parsed spec Result {
+93 silly cache add   raw: 'readline@~1.3.0',
+93 silly cache add   scope: null,
+93 silly cache add   name: 'readline',
+93 silly cache add   rawSpec: '~1.3.0',
+93 silly cache add   spec: '>=1.3.0 <1.4.0',
+93 silly cache add   type: 'range' }
+94 silly addNamed readline@>=1.3.0 <1.4.0
+95 verbose addNamed ">=1.3.0 <1.4.0" is a valid semver range for readline
+96 silly addNameRange { name: 'readline', range: '>=1.3.0 <1.4.0', hasData: false }
+97 silly mapToRegistry name readline
+98 silly mapToRegistry using default registry
+99 silly mapToRegistry registry https://registry.npmjs.org/
+100 silly mapToRegistry uri https://registry.npmjs.org/readline
+101 verbose addNameRange registry:https://registry.npmjs.org/readline not in flight; fetching
+102 silly resolveWithNewModule ejs@2.4.1 checking installable status
+103 silly cache add args [ 'ejs@~2.4.1', null ]
+104 verbose cache add spec ejs@~2.4.1
+105 silly cache add parsed spec Result {
+105 silly cache add   raw: 'ejs@~2.4.1',
+105 silly cache add   scope: null,
+105 silly cache add   name: 'ejs',
+105 silly cache add   rawSpec: '~2.4.1',
+105 silly cache add   spec: '>=2.4.1 <2.5.0',
+105 silly cache add   type: 'range' }
+106 silly addNamed ejs@>=2.4.1 <2.5.0
+107 verbose addNamed ">=2.4.1 <2.5.0" is a valid semver range for ejs
+108 silly addNameRange { name: 'ejs', range: '>=2.4.1 <2.5.0', hasData: false }
+109 silly mapToRegistry name ejs
+110 silly mapToRegistry using default registry
+111 silly mapToRegistry registry https://registry.npmjs.org/
+112 silly mapToRegistry uri https://registry.npmjs.org/ejs
+113 verbose addNameRange registry:https://registry.npmjs.org/ejs not in flight; fetching
+114 verbose get https://registry.npmjs.org/stream not expired, no request
+115 silly addNameRange number 2 { name: 'stream', range: '>=0.0.2 <0.1.0', hasData: true }
+116 silly addNameRange versions [ 'stream', [ '0.0.1', '0.0.2' ] ]
+117 silly addNamed stream@0.0.2
+118 verbose addNamed "0.0.2" is a plain semver version for stream
+119 verbose get https://registry.npmjs.org/readline not expired, no request
+120 silly addNameRange number 2 { name: 'readline', range: '>=1.3.0 <1.4.0', hasData: true }
+121 silly addNameRange versions [ 'readline',
+121 silly addNameRange   [ '0.0.1',
+121 silly addNameRange     '0.0.2',
+121 silly addNameRange     '0.0.3',
+121 silly addNameRange     '0.0.4',
+121 silly addNameRange     '0.0.5',
+121 silly addNameRange     '0.0.6',
+121 silly addNameRange     '0.0.7',
+121 silly addNameRange     '0.0.8',
+121 silly addNameRange     '1.0.0',
+121 silly addNameRange     '1.0.1',
+121 silly addNameRange     '1.1.0',
+121 silly addNameRange     '1.2.0',
+121 silly addNameRange     '1.2.1',
+121 silly addNameRange     '1.3.0' ] ]
+122 silly addNamed readline@1.3.0
+123 verbose addNamed "1.3.0" is a plain semver version for readline
+124 verbose get https://registry.npmjs.org/ejs not expired, no request
+125 silly addNameRange number 2 { name: 'ejs', range: '>=2.4.1 <2.5.0', hasData: true }
+126 silly addNameRange versions [ 'ejs',
+126 silly addNameRange   [ '0.0.1',
+126 silly addNameRange     '0.0.2',
+126 silly addNameRange     '0.0.3',
+126 silly addNameRange     '0.0.4',
+126 silly addNameRange     '0.1.0',
+126 silly addNameRange     '0.2.0',
+126 silly addNameRange     '0.2.1',
+126 silly addNameRange     '0.3.0',
+126 silly addNameRange     '0.3.1',
+126 silly addNameRange     '0.4.0',
+126 silly addNameRange     '0.4.1',
+126 silly addNameRange     '0.4.2',
+126 silly addNameRange     '0.4.3',
+126 silly addNameRange     '0.5.0',
+126 silly addNameRange     '0.6.0',
+126 silly addNameRange     '0.6.1',
+126 silly addNameRange     '0.7.0',
+126 silly addNameRange     '0.7.1',
+126 silly addNameRange     '0.7.2',
+126 silly addNameRange     '0.8.0',
+126 silly addNameRange     '0.8.1',
+126 silly addNameRange     '0.8.2',
+126 silly addNameRange     '0.8.3',
+126 silly addNameRange     '0.8.4',
+126 silly addNameRange     '0.8.5',
+126 silly addNameRange     '0.8.6',
+126 silly addNameRange     '0.8.8',
+126 silly addNameRange     '1.0.0',
+126 silly addNameRange     '2.0.2',
+126 silly addNameRange     '2.0.3',
+126 silly addNameRange     '2.0.4',
+126 silly addNameRange     '2.0.5',
+126 silly addNameRange     '2.0.6',
+126 silly addNameRange     '2.0.7',
+126 silly addNameRange     '2.0.8',
+126 silly addNameRange     '2.1.1',
+126 silly addNameRange     '2.1.2',
+126 silly addNameRange     '2.1.3',
+126 silly addNameRange     '2.1.4',
+126 silly addNameRange     '2.2.1',
+126 silly addNameRange     '2.2.2',
+126 silly addNameRange     '2.2.3',
+126 silly addNameRange     '2.2.4',
+126 silly addNameRange     '2.3.1',
+126 silly addNameRange     '2.3.2',
+126 silly addNameRange     '2.3.3',
+126 silly addNameRange     '2.3.4',
+126 silly addNameRange     '2.4.1' ] ]
+127 silly addNamed ejs@2.4.1
+128 verbose addNamed "2.4.1" is a plain semver version for ejs
+129 silly cache afterAdd readline@1.3.0
+130 verbose afterAdd /Users/sameer/.npm/readline/1.3.0/package/package.json not in flight; writing
+131 silly cache afterAdd stream@0.0.2
+132 verbose afterAdd /Users/sameer/.npm/stream/0.0.2/package/package.json not in flight; writing
+133 silly cache afterAdd ejs@2.4.1
+134 verbose afterAdd /Users/sameer/.npm/ejs/2.4.1/package/package.json not in flight; writing
+135 verbose afterAdd /Users/sameer/.npm/readline/1.3.0/package/package.json written
+136 verbose afterAdd /Users/sameer/.npm/ejs/2.4.1/package/package.json written
+137 verbose afterAdd /Users/sameer/.npm/stream/0.0.2/package/package.json written
+138 silly rollbackFailedOptional Starting
+139 silly rollbackFailedOptional Finishing
+140 silly runTopLevelLifecycles Starting
+141 silly runTopLevelLifecycles Finishing
+142 silly install printInstalled
+143 verbose stack Error: No compatible version found: fs@~0.1.7
+143 verbose stack Valid install targets:
+143 verbose stack 0.0.2, 0.0.0
+143 verbose stack
+143 verbose stack     at pickVersionFromRegistryDocument (/usr/local/lib/node_modules/npm/lib/fetch-package-metadata.js:146:16)
+143 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/iferr/index.js:13:50
+143 verbose stack     at /usr/local/lib/node_modules/npm/lib/utils/pulse-till-done.js:19:8
+143 verbose stack     at saved (/usr/local/lib/node_modules/npm/lib/cache/caching-client.js:168:7)
+143 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/graceful-fs/polyfills.js:210:7
+143 verbose stack     at FSReqWrap.oncomplete (fs.js:82:15)
+144 verbose cwd /Users/sameer/WebstormProjects/OpenStackMonitoringTool/InfrastructureMapServer
+145 error Darwin 15.4.0
+146 error argv "/usr/local/Cellar/node/5.0.0/bin/node" "/usr/local/bin/npm" "install"
+147 error node v5.0.0
+148 error npm  v3.3.9
+149 error No compatible version found: fs@~0.1.7
+149 error Valid install targets:
+149 error 0.0.2, 0.0.0
+150 error If you need help, you may report this error at:
+150 error     <https://github.com/npm/npm/issues>
+151 verbose exit [ 1, true ]

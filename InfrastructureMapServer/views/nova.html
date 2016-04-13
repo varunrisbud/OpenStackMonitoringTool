@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nova</title>
+
+    <link rel="styleSheet" href="https://cdn.rawgit.com/angular-ui/ui-grid.info/gh-pages/release/3.0.0-rc.20/ui-grid.min.css"/>
+
+    <!--AngularJS Libraries-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
+    <script src="https://cdn.rawgit.com/angular-ui/ui-grid.info/gh-pages/release/3.0.0-rc.20/ui-grid.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.1/ui-bootstrap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.1/ui-bootstrap-tpls.js"></script>
+
+    <!--Angular Controllers-->
+    <script src="/javascripts/novaController.js"></script>
+
+</head>
+<body ng-app="opsmonitor" ng-controller="novaController">
+<div>
+    <div>
+        <button type="button" class="btn btn-default" ng-click="addData()">
+            Add Row
+        </button>
+        <button type="button" class="btn btn-default" ng-click="deleteData()">
+            Delete Row
+        </button>
+    </div>
+    <br>
+        <div id="grid1" ui-grid="gridOptions" ui-grid-edit ui-grid-row-edit ui-grid-cellNav ui-grid-selection class="grid">
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

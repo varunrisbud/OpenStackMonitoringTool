@@ -10,6 +10,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var authresult = require('./routes/authresult');
 var logs = require('./routes/readLogs');
+var componentPages = require('./routes/componentPages');
 var debug = require('debug')('InfrastructureMapServer:server');
 
 var app = express();
@@ -37,6 +38,7 @@ app.use('/', routes);
 app.use('/users', users);
 app.use('/auth', authresult);
 app.use('/logs',logs);
+app.use('/component',componentPages);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
