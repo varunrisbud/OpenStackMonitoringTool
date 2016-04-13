@@ -5,7 +5,7 @@ angular.module('opsmonitor',[])
     .controller('inframapController', function($scope, $http) {
         $scope.myData = null;
         $http.
-            get('http://130.65.159.59/auth').
+            get('http://130.65.159.170/auth').
             success(function (res) {
                 $scope.myData = res;
                 console.log("JS: " + res);
