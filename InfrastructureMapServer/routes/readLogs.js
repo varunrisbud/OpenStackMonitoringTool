@@ -3,6 +3,7 @@
  */
 var express = require('express');
 var router = express.Router();
+var Client = require('node-rest-client').Client;
 var request = require('request');
 
 router.get('/:componentIndex', function(req, res, data) {
