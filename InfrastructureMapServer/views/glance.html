@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Nova</title>
+    <title>Glance</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
@@ -26,7 +26,7 @@
     <script src="/javascripts/novaController.js"></script>
 
 </head>
-<body ng-app="opsmonitor" ng-controller="novaController" data-ng-init="getValue('novascheduler')">
+<body ng-app="opsmonitor" ng-controller="novaController" data-ng-init="getValue('glanceapi')">
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -62,13 +62,10 @@
         </ul>
     </div>
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-        <h1 class="page-header">Compute Component Logs</h1>
+        <h1 class="page-header">Image Component Logs</h1>
         <div>
-            <button type="button" class="btn btn-default" ng-click="getValue('novaapi')">
-                Nova API Logs
-            </button>
-            <button type="button" class="btn btn-default" ng-click="getValue('novacompute')">
-                Nova Compute Logs
+            <button type="button" class="btn btn-default" ng-click="getValue('glanceregistry')">
+                Glance Registry Logs
             </button>
         </div>
         <div id="grid1" ui-grid="gridOptions" ui-grid-edit ui-grid-row-edit ui-grid-cellNav ui-grid-selection

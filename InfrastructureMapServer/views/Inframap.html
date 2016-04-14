@@ -5,19 +5,22 @@
     <title>Infrastructure map for OpenStack</title>
 
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
     <link rel="stylesheet" href="/stylesheets/dashboard.css">
 
     <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+          integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 
 </head>
 <body ng-app="opsmonitor" ng-controller="inframapController">
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -39,90 +42,71 @@
     </div>
 </nav>
 <div class="container-fluid">
-        <div class="col-sm-3 col-md-2 sidebar">
-            <ul class="nav nav-sidebar">
-                <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">Reports</a></li>
-                <li><a href="#">Analytics</a></li>
-                <li><a href="#">Export</a></li>
-            </ul>
-        </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-            <h1 class="page-header">Infrastructure Map</h1>
-            <div class="row placeholders">
-                <div class="col-xs-6 col-sm-3 placeholder">
+    <div class="col-sm-3 col-md-2 sidebar">
+        <ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">Reports</a></li>
+            <li><a href="#">Analytics</a></li>
+            <li><a href="#">Export</a></li>
+        </ul>
+    </div>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <h1 class="page-header">Infrastructure Map</h1>
+        <div class="row placeholders">
+            <div class="col-xs-6 col-sm-3 placeholder">
+                <a href="component/glance">
                     <svg height="100" width="100">
-                        <circle cx="50" cy="50" r="40" stroke="green" stroke-width="3" fill="green"  />
-                        <text x="40" y="55" font-family="Verdana" font-size="15" fill="white" > {{type0}} </text>
+                        <circle cx="50" cy="50" r="40" stroke="green" stroke-width="3" fill="green"/>
+                        <text x="40" y="55" font-family="Verdana" font-size="15" fill="white"> {{type0}}</text>
                     </svg>
-                    <p>IP: {{ip0}}</p>
-                    <span class="text-muted">Port: {{port0}}</span>
-                </div>
-                <div class="col-xs-6 col-sm-3 placeholder">
-                    <a href="http://www.google.com">
-                    <svg height="100" width="100">
-                        <circle cx="50" cy="50" r="40" stroke="green" stroke-width="3" fill="green"  />
-                        <text x="20" y="55" font-family="Verdana" font-size="15" fill="white" > {{type1}} </text>
-                    </svg>
-                    </a>
-                    <p>IP: {{ip1}}</p>
-                    <span class="text-muted">Port: {{port1}}</span>
-                </div>
-                <div class="col-xs-6 col-sm-3 placeholder">
-                    <svg height="100" width="100">
-                        <circle cx="50" cy="50" r="40" stroke="green" stroke-width="3" fill="green"  />
-                        <text x="20" y="55" font-family="Verdana" font-size="15" fill="white" > {{type2}} </text>
-                    </svg>
-                    <p>IP: {{ip2}}</p>
-                    <span class="text-muted">Port: {{port2}}</span>
-                </div>
-                <div class="col-xs-6 col-sm-3 placeholder">
-                    <svg height="100" width="100">
-                        <circle cx="50" cy="50" r="40" stroke="green" stroke-width="3" fill="green"  />
-                        <text x="20" y="55" font-family="Verdana" font-size="15" fill="white" > {{type3}} </text>
-                    </svg>
-                    <p>IP: {{ip3}}</p>
-                    <span class="text-muted">Port: {{port3}}</span>
-                </div>
+                </a>
+                <p>IP: {{ip0}}</p>
+                <span class="text-muted">Port: {{port0}}</span>
             </div>
-            <div class="row placeholders">
-                <div class="col-xs-6 col-sm-3 placeholder">
-                    <!--<svg height="100" width="100">-->
-                        <!--<circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="skyblue"  />-->
-                        <!--<text x="20" y="60" font-family="Verdana" font-size="25" fill="blue" > Hello </text>-->
-                    <!--</svg>-->
-                    <!--<h4>Label</h4>-->
-                    <!--<span class="text-muted">Something else</span>-->
-                </div>
-                <div class="col-xs-6 col-sm-3 placeholder">
+            <div class="col-xs-6 col-sm-3 placeholder">
+                <a href="component/nova">
                     <svg height="100" width="100">
-                        <circle cx="50" cy="50" r="40" stroke="green" stroke-width="3" fill="green"  />
-                        <text x="30" y="55" font-family="Verdana" font-size="15" fill="white" > {{type4}} </text>
+                        <circle cx="50" cy="50" r="40" stroke="green" stroke-width="3" fill="green"/>
+                        <text x="20" y="55" font-family="Verdana" font-size="15" fill="white"> {{type1}}</text>
                     </svg>
-                    <p>IP: {{ip4}}</p>
-                    <span class="text-muted">Port: {{port4}}</span>
-                </div>
-                <div class="col-xs-6 col-sm-3 placeholder">
+                </a>
+                <p>IP: {{ip1}}</p>
+                <span class="text-muted">Port: {{port1}}</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+                <a href="component/neutron">
                     <svg height="100" width="100">
-                        <circle cx="50" cy="50" r="40" stroke="green" stroke-width="3" fill="green"  />
-                        <text x="20" y="55" font-family="Verdana" font-size="15" fill="white" > {{type5}} </text>
+                        <circle cx="50" cy="50" r="40" stroke="green" stroke-width="3" fill="green"/>
+                        <text x="20" y="55" font-family="Verdana" font-size="15" fill="white"> {{type2}}</text>
                     </svg>
-                    <p>IP: {{ip5}}</p>
-                    <span class="text-muted">Port: {{port5}}</span>
-                </div>
+                </a>
+                <p>IP: {{ip2}}</p>
+                <span class="text-muted">Port: {{port2}}</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+                <a href="component/identity">
+                    <svg height="100" width="100">
+                        <circle cx="50" cy="50" r="40" stroke="green" stroke-width="3" fill="green"/>
+                        <text x="20" y="55" font-family="Verdana" font-size="15" fill="white"> {{type3}}</text>
+                    </svg>
+                </a>
+                <p>IP: {{ip3}}</p>
+                <span class="text-muted">Port: {{port3}}</span>
             </div>
         </div>
     </div>
+</div>
+    <!--jQuery Library Dependency for bootstrap -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
-<!--jQuery Library Dependency for bootstrap -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!--AngularJS Libraries-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
 
-<!--AngularJS Libraries-->
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
+    <script type="text/javascript" src="/javascripts/inframapController.js"></script>
 
-<script type="text/javascript" src="/javascripts/inframapController.js"></script>
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+            crossorigin="anonymous"></script>
 </body>
 </html>

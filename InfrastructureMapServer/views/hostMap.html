@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Host Map</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="stylesheets/dashboard.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+          integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+</head>
+<body ng-app="opsmonitor" ng-controller="inframapController">
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+
+            </button>
+            <a class="navbar-brand" href="#">OpS Monitor</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+            <form class="navbar-form navbar-right">
+                <input type="text" class="form-control" placeholder="Search...">
+            </form>
+        </div>
+    </div>
+</nav>
+<div class="container-fluid">
+    <div class="col-sm-3 col-md-2 sidebar">
+        <ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">Reports</a></li>
+            <li><a href="#">Analytics</a></li>
+            <li><a href="#">Export</a></li>
+
+        </ul>
+    </div>
+    <div class="col-sm-2 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <h1 class="page-header">Host Map</h1>
+        <div class="row placeholders">
+            <div class="col-xs-6 col-sm-6 placeholder">
+                <div class="row placeholders">
+                    <svg height="100" width="100">
+                        <circle cx="50" cy="50" r="40" stroke="yellow" stroke-width="1" fill="yellow"/>
+                        <text x="40" y="55" font-family="Verdana" font-size="15" fill="black"> {{type0}}</text>
+                    </svg>
+                    <p>Host1: {{host1}}</p>
+                </div>
+                <div class="row">
+                    <table style="float: left; width:90%">
+                        <tr>
+                            <th>Host 1</th>
+                            <th colspan="2">Host 2</th>
+                        </tr>
+                        <tr>
+                            <td>CPU</td>
+                            <td>Memory</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+
+            <div class="col-xs-6 col-sm-6 placeholder">
+                <div class="row placeholders">
+                    <svg height="100" width="100">
+                        <circle cx="50" cy="50" r="40" stroke="green" stroke-width="3" fill="green"/>
+                        <text x="20" y="55" font-family="Verdana" font-size="15" fill="white"> {{type3}}</text>
+                    </svg>
+                    <p>Host2: {{host2}}</p>
+                </div>
+                <div class="row">
+                    <table style="float: left; width:90%">
+                        <tr>
+                            <th>Host 1</th>
+                            <th colspan="2">Host 2</th>
+                        </tr>
+                        <tr>
+                            <td>CPU</td>
+                            <td>Memory</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <style>
+                table, th, td {
+                    border: 1px solid black;
+                    border-collapse: collapse;
+                }
+
+                th, td {
+                    padding: 1px;
+                    text-align: left;
+                }
+            </style>
+            </head>
+
+
+            <style>
+                table, th, td {
+                    border: 1px solid black;
+                    border-collapse: collapse;
+                }
+
+                th, td {
+                    padding: 1px;
+                    text-align: left;
+                }
+            </style>
+            </head>
+
+
+        </div>
+    </div>
+</div>
+
+
+<!--jQuery Library Dependency for bootstrap -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<!--AngularJS Libraries-->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
+
+<script type="text/javascript" src="inframapController.js"></script>
+<script type="text/javascript"> src = "javascripts/vendor/html5shiv.js" </script>
+<script type="text/javascript"> src = "javascripts/vendor/plugins.js" </script>
+<script type="text/javascript"> src = "javascripts/vendor/jquery.knob.js" </script>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+        integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+        crossorigin="anonymous"></script>
+</body>
+</html>

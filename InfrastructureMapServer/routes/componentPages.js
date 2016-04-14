@@ -11,4 +11,16 @@ router.get('/nova', function (req, res, data) {
     res.render('nova');
 });
 
+router.get('/glance', function (req, res, data) {
+    res.render('glance');
+});
+
+router.get('/neutron', function (req, res, data) {
+    res.render('neutron');
+});
+
+router.get('/identity', function (req, res, data) {
+    res.render('identity');
+});
+
 module.exports = router;
