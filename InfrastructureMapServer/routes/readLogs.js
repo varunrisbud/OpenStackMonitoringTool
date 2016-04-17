@@ -7,10 +7,10 @@ var Client = require('node-rest-client').Client;
 var request = require('request');
 
 
-router.get('/query', function (req, res, data) {
-
+router.get('/warnings/:componentIndex', function (req, res, data) {
+    var index = req.params.componentIndex;
     var options = {
-        uri: 'http://130.65.159.58:9200/glanceapi/_search',
+        uri: 'http://130.65.159.58:9200/' + index + '/_search?pretty=true',
         headers: {
             'Content-Type': 'application/json'
         },
