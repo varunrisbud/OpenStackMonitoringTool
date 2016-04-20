@@ -12,6 +12,7 @@ var authresult = require('./routes/authresult');
 var logs = require('./routes/readLogs');
 var componentPages = require('./routes/componentPages');
 var report = require('./routes/reports');
+var serviceStatus = require('./routes/serviceStatus');
 var debug = require('debug')('InfrastructureMapServer:server');
 
 
@@ -42,6 +43,7 @@ app.use('/auth', authresult);
 app.use('/logs',logs);
 app.use('/component',componentPages);
 app.use('/reports',report);
+app.use('/status',serviceStatus);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
