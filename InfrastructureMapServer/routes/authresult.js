@@ -5,6 +5,7 @@ var express = require('express');
 var router = express.Router();
 var Client = require('node-rest-client').Client;
 var request = require('request');
+var sleep = require('sleep');
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
@@ -93,15 +94,22 @@ router.get('/createinstance', function (req, res, next) {
 
         var keyStoneAuthToken = body.access.token.id;
 
-        createServer(keyStoneAuthToken, function(data){
+        createServer(keyStoneAuthToken, function (data) {
 
             console.log(data.body);
 
-            if(data.statusCode == 202) {
+            if (data.statusCode == 202) {
                 var serverID = data.body.server.id;
-                checkServerStatus(keyStoneAuthToken, serverID, function(status) {
+
+                sleep.sleep(10);
+
+                checkServerStatus(keyStoneAuthToken, serverID, function (status) {
                     console.log("In IF");
                     res.send(status);
+
+                    deleteServer(keyStoneAuthToken, serverID, function (resp) {
+                        console.log(serverID + " Deleted Successfully" + resp);
+                    });
                 });
             }
             else {
@@ -109,11 +117,12 @@ router.get('/createinstance', function (req, res, next) {
                 res.json(data);
             }
         });
+
     });
-    //res.render('glance');
+
 });
 
-var createServer = function(keyStoneAuthToken, callback) {
+var createServer = function (keyStoneAuthToken, callback) {
     var options = {
         uri: 'http://130.65.159.58:8774/v2.1/d6812e9d3572441b83bf79a8abac323e/servers',
         headers: {
@@ -140,7 +149,7 @@ var createServer = function(keyStoneAuthToken, callback) {
     });
 }
 
-var checkServerStatus = function(keyStoneAuthToken, serverId, callback) {
+var checkServerStatus = function (keyStoneAuthToken, serverId, callback) {
     var options = {
         uri: 'http://130.65.159.58:8774/v2.1/d6812e9d3572441b83bf79a8abac323e/servers/' + serverId,
         headers: {
@@ -151,8 +160,28 @@ var checkServerStatus = function(keyStoneAuthToken, serverId, callback) {
         method: 'GET'
     };
 
-    request(options, function(req, res, body) {
+    request(options, function (req, res, body) {
         callback(body);
+    });
+}
+
+var deleteServer = function (keyStoneAuthToken, serverId, callback) {
+
+    sleep.sleep(30);
+
+    var options = {
+        uri: 'http://130.65.159.58:8774/v2.1/d6812e9d3572441b83bf79a8abac323e/servers/' + serverId,
+        headers: {
+            'Content-Type': 'application/json',
+            'X-Auth-Token': keyStoneAuthToken,
+            'Cache-Control': 'no-cache'
+        },
+        json: true,
+        method: 'DELETE'
+    };
+
+    request(options, serverId, function (req, res, body) {
+        callback(res);
     });
 }
 
