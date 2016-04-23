@@ -89,39 +89,70 @@ router.get('/createinstance', function (req, res, next) {
         }
     };
 
-    request.post(options, function (req, res, body) {
+    request.post(options, function (err, httpResponse, body) {
 
-        var id = body.access.token.id;
+        var keyStoneAuthToken = body.access.token.id;
 
-        var options = {
-            uri: 'http://130.65.159.58:8774/v2.1/d6812e9d3572441b83bf79a8abac323e/servers',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-Auth-Token': id,
-                'Cache-Control': 'no-cache'
-            },
-            json: true,
-            body: {
-                "server": {
-                    "name": "new-server-test",
-                    "imageRef": "http://130.65.159.58:9292/images/c6fe6e17-8054-41c0-81b3-bd2ef8375497",
-                    "flavorRef": "http://130.65.159.58:9292/flavors/1",
-                    "networks": [{"uuid": "c39bedd0-1d41-4536-8b7c-9ef2ea8f06c9"}],
-                    "metadata": {
-                        "My Server Name": "CurlTestServer"
-                    }
-                }
+        createServer(keyStoneAuthToken, function(data){
+
+            console.log(data.body);
+
+            if(data.statusCode == 202) {
+                var serverID = data.body.server.id;
+                checkServerStatus(keyStoneAuthToken, serverID, function(status) {
+                    console.log("In IF");
+                    res.send(status);
+                });
             }
-        };
-
-        createServer(options);
+            else {
+                console.log("In else");
+                res.json(data);
+            }
+        });
     });
-
-    res.render('glance');
+    //res.render('glance');
 });
 
-function createServer(options) {
+var createServer = function(keyStoneAuthToken, callback) {
+    var options = {
+        uri: 'http://130.65.159.58:8774/v2.1/d6812e9d3572441b83bf79a8abac323e/servers',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-Auth-Token': keyStoneAuthToken,
+            'Cache-Control': 'no-cache'
+        },
+        json: true,
+        body: {
+            "server": {
+                "name": "new-server-test",
+                "imageRef": "http://130.65.159.58:9292/images/c6fe6e17-8054-41c0-81b3-bd2ef8375497",
+                "flavorRef": "http://130.65.159.58:9292/flavors/1",
+                "networks": [{"uuid": "c39bedd0-1d41-4536-8b7c-9ef2ea8f06c9"}],
+                "metadata": {
+                    "My Server Name": "CurlTestServer"
+                }
+            }
+        }
+    };
+
     request.post(options, function (req, res, body) {
+        callback(res);
+    });
+}
+
+var checkServerStatus = function(keyStoneAuthToken, serverId, callback) {
+    var options = {
+        uri: 'http://130.65.159.58:8774/v2.1/d6812e9d3572441b83bf79a8abac323e/servers/' + serverId,
+        headers: {
+            'Content-Type': 'application/json',
+            'X-Auth-Token': keyStoneAuthToken,
+            'Cache-Control': 'no-cache'
+        },
+        method: 'GET'
+    };
+
+    request(options, function(req, res, body) {
+        callback(body);
     });
 }
 
