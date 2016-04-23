@@ -88,11 +88,25 @@ router.get('/hosthealth', function (req, res, next) {
             COMPUTE_HEALTH_STATUS = "Red";
         }
     }
+    var host1 = {
+        hostName: "Controller",
+        healthColorCode: CONTROLLER_HEALTH_STATUS,
+        cpuUsage: CPU_CONTROLLER + " %",
+        memoryUsage: MEMORY_CONTROLLER + " Mb",
+        diskReadRate: DISK_READ_CONTROLLER + " Mb/sec",
+        diskWriteRate: DISK_WRITE_CONTROLLER + " Mb/sec"
+    };
 
-    var response = '{ "health" : [' +
-        '{"HOST_NAME":"Controller", "CONTROLLER_HEALTH_STATUS":"' + CONTROLLER_HEALTH_STATUS + '", "CPU_CONTROLLER":"' + CPU_CONTROLLER + '%", "MEMORY_CONTROLLER":"' + MEMORY_CONTROLLER + 'Mb", "DISK_READ_CONTROLLER":"' + DISK_READ_CONTROLLER + 'Mb/s", "DISK_WRITE_CONTROLLER":"' + DISK_WRITE_CONTROLLER + 'Mb/s"},' +
-        '{"HOST_NAME":"Compute", "COMPUTE_HEALTH_STATUS":"' + COMPUTE_HEALTH_STATUS + '", "CPU_COMPUTE":"' + CPU_COMPUTE + '%", "MEMORY_COMPUTE":"' + MEMORY_COMPUTE + 'Mb", "DISK_READ_COMPUTE":"' + DISK_READ_COMPUTE + 'Mb/s", "DISK_WRITE_COMPUTE":"' + DISK_WRITE_COMPUTE + 'Mb/s"}]}';
+    var host2 = {
+        hostName: "Compute",
+        healthColorCode: COMPUTE_HEALTH_STATUS,
+        cpuUsage: CPU_COMPUTE + " %",
+        memoryUsage: MEMORY_COMPUTE + " Mb",
+        diskReadRate: DISK_READ_COMPUTE + " Mb/sec",
+        diskWriteRate: DISK_WRITE_COMPUTE + " Mb/sec"
+    };
 
+    var response = [host1, host2];
     res.send(response);
 });
 
