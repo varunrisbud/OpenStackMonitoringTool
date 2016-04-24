@@ -1,0 +1,11 @@
+* * * * * /bin/bash /home/student/HealthMonitoring/ShellDaemons/CPUUsageDaemon.sh > /var/log/CPUUsage.log 2>&1
+* * * * * /bin/bash /home/student/HealthMonitoring/ShellDaemons/MemoryUsageDaemon.sh > /var/log/MemoryUsage.log 2>&1
+* * * * * /bin/bash /home/student/HealthMonitoring/ShellDaemons/DiskWriteRateDaemon.sh
+* * * * * sleep 15; /bin/bash /home/student/HealthMonitoring/ShellDaemons/FinalDiskWriteRateDaemon.sh > /var/log/DiskWriteRate.log 2>&1
+* * * * * /bin/bash /home/student/HealthMonitoring/ShellDaemons/DiskReadRateDaemon.sh
+* * * * * sleep 45; /bin/bash /home/student/HealthMonitoring/ShellDaemons/FinalDiskReadRateDaemon.sh > /var/log/DiskReadRate.log 2>&1
+0 */1 * * * /bin/bash /home/student/HealthMonitoring/ShellDaemons/GetAuthenticationTokenDaemon.sh > /var/log/AuthenticationToken.log 2>&1
+* * * * * sleep 20; /bin/bash /home/student/HealthMonitoring/ShellDaemons/CheckKeystoneStatusDaemon.sh > /var/log/ServiceStatus/KeystoneStatus.log 2>&1
+* * * * * sleep 30; /bin/bash /home/student/HealthMonitoring/ShellDaemons/CheckGlanceStatusDaemon.sh > /var/log/ServiceStatus/GlanceStatus.log 2>&1
+* * * * * sleep 40; /bin/bash /home/student/HealthMonitoring/ShellDaemons/CheckNeutronStatusDaemon.sh > /var/log/ServiceStatus/NeutronStatus.log 2>&1
+* * * * * sleep 50; /bin/bash /home/student/HealthMonitoring/ShellDaemons/CheckNovaStatusDaemon.sh > /var/log/ServiceStatus/NovaStatus.log 2>&1
