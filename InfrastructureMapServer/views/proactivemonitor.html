@@ -2,15 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Infrastructure map for OpenStack</title>
-
-    <style>
-        #map {
-            width: 1000px;
-            height: 800px;
-        }
-    </style>
-
+    <title>Pro-Active Monitoring</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
@@ -22,59 +14,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
           integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 
-    <script>
-        var map;
-        function initMap(data) {
-            var xmlhttp = new XMLHttpRequest();
-            var url = "http://130.65.159.170/logs/horizon/horizon-access";
-            var myArr;
-            xmlhttp.onreadystatechange = function () {
-                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                    myArr = JSON.parse(xmlhttp.responseText);
-                    console.log(myArr.hits);
-                    var loc = new Array();
-                    var i;
-                    for (i = 0; i < myArr.hits.hits.length; i++) {
-                        loc.push([myArr.hits.hits[i]._source.geoip.latitude, myArr.hits.hits[i]._source.geoip.longitude, myArr.hits.hits[i]._source.geoip.ip]);
-                    }
-
-                    var myLatLng = {
-                        lat: 37.09024,
-                        lng: -95.712891
-                    };
-
-                    var map = new google.maps.Map(document.getElementById('map'), {
-                        zoom: 4,
-                        center: myLatLng
-                    });
-
-                    var infowindow = new google.maps.InfoWindow({});
-
-                    var marker, i;
-                    for (i = 0; i < loc.length; i++) {
-                        marker = new google.maps.Marker({
-                            position: new google.maps.LatLng(loc[i][0], loc[i][1]),
-                            map: map
-                        });
-                        google.maps.event.addListener(marker, 'click', (function (marker, i) {
-                            return function () {
-                                infowindow.setContent("IP Address is: " + loc[i][2]);
-                                infowindow.open(map, marker);
-                            }
-                        })(marker, i));
-                    }
-                }
-            };
-            xmlhttp.open("GET", url, true);
-            xmlhttp.send();
-        }
-    </script>
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIxK82igj6JRDqjxl-X3A-jmeZxrOHHrw&callback=initMap">
-    </script>
-
 </head>
-<body ng-app="opsmonitor">
+<body ng-app="opsmonitor" ng-controller ="proactiveController">
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -110,9 +51,15 @@
         </ul>
     </div>
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-        <h1 class="page-header">OpenStack Access Map</h1>
-        <div id="map"></div>
-
+        <h1 class="page-header">Flow Checks</h1>
+        <!--ng-src="{{interface == 'UP' && 'green-checkmark.png' || 'big-black-X.png'}}"-->
+        <!--<p>-->
+            <!--<span class="glyphicon glyphicon-ok"></span>-->
+        <!--</p>-->
+        <p>
+            <span ng-class='getGlyphicon()'></span>
+            <!--<span ng-class="{{res == 'success' && 'glyphicon glyphicon-remove' || 'glyphicon glyphicon-ok'}}"></span>-->
+        </p>
     </div>
 </div>
 
@@ -123,6 +70,8 @@
 
 <!--AngularJS Libraries-->
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
+
+<script type="text/javascript" src="/javascripts/proactiveController.js"></script>
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"

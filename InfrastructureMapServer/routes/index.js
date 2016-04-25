@@ -6,4 +6,8 @@ router.get('/', function(req, res, next) {
   res.render('Inframap.html');
 });
 
+router.get('/pro', function(req, res, next) {
+  res.render('proactivemonitor.html');
+});
+
 module.exports = router;
