@@ -5,6 +5,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var http = require('http');
+var later = require('later');
+var winston = require('winston');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -14,8 +16,8 @@ var componentPages = require('./routes/componentPages');
 var report = require('./routes/reports');
 var serviceStatus = require('./routes/serviceStatus');
 var analyticsPages = require('./routes/analyticsPages');
+var proactiveWorkFlowEndPoints = require('./routes/proactiveWorkFlowEndPoints')
 var debug = require('debug')('InfrastructureMapServer:server');
-
 
 var app = express();
 
@@ -46,6 +48,7 @@ app.use('/component',componentPages);
 app.use('/reports',report);
 app.use('/status',serviceStatus);
 app.use('/openstackaccessmap', analyticsPages);
+app.use('/proactiveTests', proactiveWorkFlowEndPoints);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
