@@ -3,13 +3,33 @@
  */
 angular.module('opsmonitor', [])
     .controller('proactiveController', function ($scope, $http) {
-        var res = 'success';
-        $scope.getGlyphicon = function (res) {
-            if (res == 'success') {
-                return "glyphicon glyphicon-remove";
+        $http.get('http://130.65.159.170/proactiveTests/status').success(function (res) {
+            $scope.getGlyphiconCVM = function () {
+                if (res.aggregations.group.buckets[0].group_docs.hits.hits[0]._source.error == 'none') {
+                    return "glyphicon glyphicon-ok";
+                }
+                else {
+                    return "glyphicon glyphicon-remove";
+                }
             }
-            else {
-                return "glyphicon glyphicon-ok";
+
+            $scope.getGlyphiconBVM = function () {
+                if (res.aggregations.group.buckets[2].group_docs.hits.hits[0]._source.error == 'none') {
+                    return "glyphicon glyphicon-ok";
+                }
+                else {
+                    return "glyphicon glyphicon-remove";
+                }
+
             }
-        }
+
+            $scope.getGlyphiconDVM = function () {
+                if (res.aggregations.group.buckets[1].group_docs.hits.hits[0]._source.error == 'none') {
+                    return "glyphicon glyphicon-ok";
+                }
+                else {
+                    return "glyphicon glyphicon-remove";
+                }
+            }
+        });
     });

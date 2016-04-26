@@ -15,7 +15,7 @@
           integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 
 </head>
-<body ng-app="opsmonitor" ng-controller ="proactiveController">
+<body ng-app="opsmonitor" ng-controller="proactiveController">
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -52,14 +52,30 @@
     </div>
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
         <h1 class="page-header">Flow Checks</h1>
-        <!--ng-src="{{interface == 'UP' && 'green-checkmark.png' || 'big-black-X.png'}}"-->
-        <!--<p>-->
-            <!--<span class="glyphicon glyphicon-ok"></span>-->
-        <!--</p>-->
-        <p>
-            <span ng-class='getGlyphicon()'></span>
-            <!--<span ng-class="{{res == 'success' && 'glyphicon glyphicon-remove' || 'glyphicon glyphicon-ok'}}"></span>-->
-        </p>
+        <div class="row">
+            <div class="col-sm-4 text-center">
+                <h2>Workflow Test Name</h2>
+            </div>
+            <div class="col-sm-4 text-center"><h2>Current Status</h2></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 text-center">
+                <h4>Create VM</h4>
+            </div>
+            <div class="col-sm-4 text-center"><h4 ng-class='getGlyphiconCVM()'></h4></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 text-center">
+                <h4>Delete VM</h4>
+            </div>
+            <div class="col-sm-4 text-center"><h4 ng-class='getGlyphiconDVM()'></h4></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 text-center">
+                <h4>Build VM</h4>
+            </div>
+            <div class="col-sm-4 text-center"><h4 ng-class='getGlyphiconBVM()'></h4></div>
+        </div>
     </div>
 </div>
 
