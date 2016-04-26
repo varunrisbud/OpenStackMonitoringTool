@@ -15,7 +15,7 @@
           integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 
 </head>
-<body ng-app="opsmonitor" ng-controller="proactiveController">
+<body ng-app="opsmonitor" ng-controller="proactiveController" data-ng-init="getData()">
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -62,19 +62,19 @@
             <div class="col-sm-4 text-center">
                 <h4>Create VM</h4>
             </div>
-            <div class="col-sm-4 text-center"><h4 ng-class='getGlyphiconCVM()'></h4></div>
+            <div class="col-sm-4 text-center"><h4 ng-class='getGlyphiconForTest("createserver")'></h4></div>
         </div>
         <div class="row">
             <div class="col-sm-4 text-center">
                 <h4>Delete VM</h4>
             </div>
-            <div class="col-sm-4 text-center"><h4 ng-class='getGlyphiconDVM()'></h4></div>
+            <div class="col-sm-4 text-center"><h4 ng-class='getGlyphiconForTest("deletevm")'></h4></div>
         </div>
         <div class="row">
             <div class="col-sm-4 text-center">
                 <h4>Build VM</h4>
             </div>
-            <div class="col-sm-4 text-center"><h4 ng-class='getGlyphiconBVM()'></h4></div>
+            <div class="col-sm-4 text-center"><h4 ng-class='getGlyphiconForTest("vmstatus")'></h4></div>
         </div>
     </div>
 </div>
