@@ -18,12 +18,6 @@ var logger = new winston.Logger({
             maxsize: 5242880, //5MB
             maxFiles: 5,
             colorize: false
-        }),
-        new winston.transports.Console({
-            level: 'debug',
-            handleExceptions: true,
-            json: false,
-            colorize: true
         })
     ],
     exitOnError: false
@@ -124,14 +118,14 @@ var testCreateVMWorkFlow = function() {
         createServer(keyStoneAuthToken, function (res) {
             if (res.statusCode == 202) {
                 var serverID = res.body.server.id;
-                logger.info('CreateServer', {'requestStatus' : 'successful', 'statusCode' : res.statusCode, 'error' : ''});
+                logger.info('CreateServer', {'requestStatus' : 'successful', 'statusCode' : res.statusCode, 'error' : 'none'});
                 sleep.sleep(10);
 
                 checkServerStatus(keyStoneAuthToken, serverID, function (status1) {
                     var jsonBody = JSON.parse(status1);
                     logger.info('vmStatus', {'requestStatus' : 'successful', 'statusCode' : jsonBody.server.status, 'error' : jsonBody.server.fault.message});
                     deleteServer(keyStoneAuthToken, serverID, function (resp) {
-                        logger.info('deleteVM', {'requestStatus' : 'successful', 'statusCode' : resp.statusCode, 'error' : ''});
+                        logger.info('deleteVM', {'requestStatus' : 'successful', 'statusCode' : resp.statusCode, 'error' : 'none'});
 
                     });
                 });
