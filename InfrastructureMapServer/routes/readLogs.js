@@ -93,7 +93,7 @@ router.get('/errors/:componentIndex', function (req, res, data) {
 router.get('/horizon/:componentIndex', function (req, res, data) {
     var index = req.params.componentIndex;
     var options = {
-        uri: 'http://130.65.159.58:9200/' + index + '/_search?pretty=true',
+        uri: 'http://130.65.159.58:9200/' + index + '/_search',
         headers: {
             'Content-Type': 'application/json'
         },
@@ -106,7 +106,7 @@ router.get('/horizon/:componentIndex', function (req, res, data) {
                                 message: "/Horizon"
                             }
                         },
-                           {
+                        {
                             range: {
                                 "@timestamp": {
                                     gte: "now-200d"
@@ -116,11 +116,12 @@ router.get('/horizon/:componentIndex', function (req, res, data) {
                     ],
                     must_not: {
                         match: {
-                            "geoip.city_name" : "San Jose"
+                            "geoip.city_name": "San Jose"
                         }
                     }
                 }
-            }
+            },
+            size: 500
         }
     };
 

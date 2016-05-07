@@ -31,11 +31,14 @@
             xmlhttp.onreadystatechange = function () {
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                     myArr = JSON.parse(xmlhttp.responseText);
-                    console.log(myArr.hits);
+                    //console.log(myArr.hits);
                     var loc = new Array();
                     var i;
                     for (i = 0; i < myArr.hits.hits.length; i++) {
-                        loc.push([myArr.hits.hits[i]._source.geoip.latitude, myArr.hits.hits[i]._source.geoip.longitude, myArr.hits.hits[i]._source.geoip.ip]);
+                        console.log("Source array " + myArr.hits.hits.length);
+                        if(myArr.hits.hits[i]._source.geoip != null) {
+                            loc.push([myArr.hits.hits[i]._source.geoip.latitude, myArr.hits.hits[i]._source.geoip.longitude, myArr.hits.hits[i]._source.geoip.ip]);
+                        }
                     }
 
                     var myLatLng = {
@@ -74,7 +77,7 @@
     </script>
 
 </head>
-<body ng-app="opsmonitor">
+<body>
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
