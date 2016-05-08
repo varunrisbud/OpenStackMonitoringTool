@@ -10,4 +10,10 @@ router.get('/', function(req, res, next) {
   res.render('Inframap.html');
 });
 
+router.get('/hostmap', function(req, res, next) {
+  proActiveWorkFlow.executeWorkFlowTests();
+  res.render('hostMap.html');
+});
+
+
 module.exports = router;

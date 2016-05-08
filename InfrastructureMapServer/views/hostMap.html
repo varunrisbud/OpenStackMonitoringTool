@@ -15,7 +15,7 @@
           integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 
 </head>
-<body ng-app="opsmonitor" ng-controller="inframapController">
+<body ng-app="opsmonitor" ng-controller="hostMapController">
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -56,11 +56,38 @@
                     <table style="float: left; width:90%">
                         <tr>
                             <th>Host 1</th>
-                            <th colspan="2">Host 2</th>
+                            <th colspan="2">  </th>
+
+
                         </tr>
                         <tr>
-                            <td>CPU</td>
-                            <td>Memory</td>
+                            <td>Property</td>
+                            <td>Value</td>
+
+                        </tr>
+                        <tr>
+                            <td> Host_Name</td>
+                            <td>{{host_name}}</td>
+                        </tr>
+                        <tr>
+                            <td>CPU_CONTROLLER</td>
+                            <td>{{cpu_controller}}</td>
+                        </tr>
+                        <tr>
+                            <td> MEMORY_CONTROLLER</td>
+                            <td>{{memory_controller}}</td>
+                        </tr>
+                        <tr>
+                            <td>CONTROLLER-HEALTH_STATUS</td>
+                            <td>{{controller_health_status}}</td>
+                        </tr>
+                        <tr>
+                            <td>DISK_READ_CONTROLLER</td>
+                            <td>{{disk_read_controller}}</td>
+                        </tr>
+                        <tr>
+                            <td>DISK_WRITE_CONTROLLER</td>
+                            <td>{{disk_write_controller}}</td>
                         </tr>
                     </table>
                 </div>
@@ -79,11 +106,35 @@
                     <table style="float: left; width:90%">
                         <tr>
                             <th>Host 1</th>
-                            <th colspan="2">Host 2</th>
+                            <th colspan="2"> </th>
                         </tr>
                         <tr>
-                            <td>CPU</td>
-                            <td>Memory</td>
+                            <td>Property</td>
+                            <td>Value</td>
+                        </tr>
+                        <tr>
+                            <td> Host_Name</td>
+                            <td>{{host2_name}}</td>
+                        </tr>
+                        <tr>
+                            <td>CPU_COMPUTE</td>
+                            <td>{{cpu_compute}}</td>
+                        </tr>
+                        <tr>
+                            <td> MEMORY_COMPUTE</td>
+                            <td>{{memory_compute}}</td>
+                        </tr>
+                        <tr>
+                            <td>COMPUTE-HEALTH_STATUS</td>
+                            <td>{{compute_health_status}}</td>
+                        </tr>
+                        <tr>
+                            <td>DISK_READ_COMPUTE</td>
+                            <td>{{disk_read_compute}}</td>
+                        </tr>
+                        <tr>
+                            <td>DISK_WRITE_COMPUTE</td>
+                            <td>{{disk_write_compute}}</td>
                         </tr>
                     </table>
                 </div>
@@ -121,15 +172,13 @@
     </div>
 </div>
 
-<div id="footer"></div>
-
 <!--jQuery Library Dependency for bootstrap -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
 <!--AngularJS Libraries-->
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
 
-<script type="text/javascript" src="inframapController.js"></script>
+<script type="text/javascript" src="javascripts/hostMapController.js"></script>
 <script type="text/javascript"> src = "javascripts/vendor/html5shiv.js" </script>
 <script type="text/javascript"> src = "javascripts/vendor/plugins.js" </script>
 <script type="text/javascript"> src = "javascripts/vendor/jquery.knob.js" </script>
