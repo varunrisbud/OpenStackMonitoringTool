@@ -9,32 +9,64 @@ var request = require('request');
 
 router.get('/warnings/:componentIndex', function (req, res, data) {
     var index = req.params.componentIndex;
-    var options = {
-        uri: 'http://130.65.159.58:9200/' + index + '/_search?pretty=true',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        json: {
-            query: {
-                bool: {
-                    must: [
-                        {
-                            match: {
-                                message: "WARNING"
-                            }
-                        },
-                        {
-                            range: {
-                                "@timestamp": {
-                                    gte: "now-200d"
+    var options;
+    if(index == 'imagechecksum') {
+        options = {
+            uri: 'http://130.65.159.58:9200/' + index + '/_search?pretty=true',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            json: {
+                query: {
+                    bool: {
+                        must: [
+                            {
+                                match: {
+                                    message: "Unverified"
+                                }
+                            },
+                            {
+                                range: {
+                                    "@timestamp": {
+                                        gte: "now-45m"
+                                    }
                                 }
                             }
-                        }
-                    ]
+                        ]
+                    }
                 }
             }
-        }
-    };
+        };
+    }
+    else {
+        options = {
+            uri: 'http://130.65.159.58:9200/' + index + '/_search?pretty=true',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            json: {
+                query: {
+                    bool: {
+                        must: [
+                            {
+                                match: {
+                                    message: "WARNING"
+                                }
+                            },
+                            {
+                                range: {
+                                    "@timestamp": {
+                                        gte: "now-200d"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        };
+    }
+
 
     request.post(options, function (err, httpResponse, body) {
         res.send(body);
