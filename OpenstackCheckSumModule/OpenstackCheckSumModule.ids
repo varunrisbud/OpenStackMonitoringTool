@@ -1,0 +1,1049 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - glance@localhost" uuid="2bc76763-3c08-4e4a-ac18-b1e5f5411da5">
+    <database-info product="MySQL" version="5.5.44-0ubuntu0.14.04.1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.5">
+      <schema id="1" name="glance"/>
+      <table id="2" parent="1" name="artifact_blob_locations"/>
+      <table id="3" parent="1" name="artifact_blobs"/>
+      <table id="4" parent="1" name="artifact_dependencies"/>
+      <table id="5" parent="1" name="artifact_properties"/>
+      <table id="6" parent="1" name="artifact_tags"/>
+      <table id="7" parent="1" name="artifacts"/>
+      <table id="8" parent="1" name="image_locations"/>
+      <table id="9" parent="1" name="image_members"/>
+      <table id="10" parent="1" name="image_properties"/>
+      <table id="11" parent="1" name="image_tags"/>
+      <table id="12" parent="1" name="images"/>
+      <table id="13" parent="1" name="metadef_namespace_resource_types"/>
+      <table id="14" parent="1" name="metadef_namespaces"/>
+      <table id="15" parent="1" name="metadef_objects"/>
+      <table id="16" parent="1" name="metadef_properties"/>
+      <table id="17" parent="1" name="metadef_resource_types"/>
+      <table id="18" parent="1" name="metadef_tags"/>
+      <table id="19" parent="1" name="migrate_version"/>
+      <table id="20" parent="1" name="task_info"/>
+      <table id="21" parent="1" name="tasks"/>
+      <column id="22" parent="2" name="id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(36)</data-type>
+      </column>
+      <column id="23" parent="2" name="blob_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(36)</data-type>
+      </column>
+      <column id="24" parent="2" name="value">
+        <mandatory>1</mandatory>
+        <data-type>text</data-type>
+      </column>
+      <column id="25" parent="2" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="26" parent="2" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="27" parent="2" name="position">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="28" parent="2" name="status">
+        <data-type>varchar(36)</data-type>
+      </column>
+      <index id="29" parent="2" name="ix_artifact_blob_locations_blob_id">
+        <columns>blob_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="30" parent="2" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="31" parent="2" name="artifact_blob_locations_ibfk_1">
+        <columns>blob_id</columns>
+        <ref-key>~.artifact_blobs.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="32" parent="3" name="id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(36)</data-type>
+      </column>
+      <column id="33" parent="3" name="artifact_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(36)</data-type>
+      </column>
+      <column id="34" parent="3" name="size">
+        <mandatory>1</mandatory>
+        <data-type>bigint(20)</data-type>
+      </column>
+      <column id="35" parent="3" name="checksum">
+        <data-type>varchar(32)</data-type>
+      </column>
+      <column id="36" parent="3" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="37" parent="3" name="item_key">
+        <data-type>varchar(329)</data-type>
+      </column>
+      <column id="38" parent="3" name="position">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="39" parent="3" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="40" parent="3" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <index id="41" parent="3" name="ix_artifact_blobs_artifact_id">
+        <columns>artifact_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="42" parent="3" name="ix_artifact_blobs_name">
+        <columns>name</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="43" parent="3" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="44" parent="3" name="artifact_blobs_ibfk_1">
+        <columns>artifact_id</columns>
+        <ref-key>~.artifacts.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="45" parent="4" name="id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(36)</data-type>
+      </column>
+      <column id="46" parent="4" name="artifact_source">
+        <mandatory>1</mandatory>
+        <data-type>varchar(36)</data-type>
+      </column>
+      <column id="47" parent="4" name="artifact_dest">
+        <mandatory>1</mandatory>
+        <data-type>varchar(36)</data-type>
+      </column>
+      <column id="48" parent="4" name="artifact_origin">
+        <mandatory>1</mandatory>
+        <data-type>varchar(36)</data-type>
+      </column>
+      <column id="49" parent="4" name="is_direct">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)</data-type>
+      </column>
+      <column id="50" parent="4" name="position">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="51" parent="4" name="name">
+        <data-type>varchar(36)</data-type>
+      </column>
+      <column id="52" parent="4" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="53" parent="4" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <index id="54" parent="4" name="ix_artifact_dependencies_dest_id">
+        <columns>artifact_dest</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="55" parent="4" name="ix_artifact_dependencies_direct_dependencies">
+        <columns>artifact_source
+is_direct</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="56" parent="4" name="ix_artifact_dependencies_origin_id">
+        <columns>artifact_origin</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="57" parent="4" name="ix_artifact_dependencies_source_id">
+        <columns>artifact_source</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="58" parent="4" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="59" parent="4" name="artifact_dependencies_ibfk_1">
+        <columns>artifact_source</columns>
+        <ref-key>~.artifacts.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="60" parent="4" name="artifact_dependencies_ibfk_2">
+        <columns>artifact_dest</columns>
+        <ref-key>~.artifacts.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="61" parent="4" name="artifact_dependencies_ibfk_3">
+        <columns>artifact_origin</columns>
+        <ref-key>~.artifacts.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="62" parent="5" name="id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(36)</data-type>
+      </column>
+      <column id="63" parent="5" name="artifact_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(36)</data-type>
+      </column>
+      <column id="64" parent="5" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="65" parent="5" name="string_value">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="66" parent="5" name="int_value">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="67" parent="5" name="numeric_value">
+        <data-type>decimal(10)</data-type>
+      </column>
+      <column id="68" parent="5" name="bool_value">
+        <data-type>tinyint(1)</data-type>
+      </column>
+      <column id="69" parent="5" name="text_value">
+        <data-type>text</data-type>
+      </column>
+      <column id="70" parent="5" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="71" parent="5" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="72" parent="5" name="position">
+        <data-type>int(11)</data-type>
+      </column>
+      <index id="73" parent="5" name="ix_artifact_properties_artifact_id">
+        <columns>artifact_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="74" parent="5" name="ix_artifact_properties_name">
+        <columns>name</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="75" parent="5" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="76" parent="5" name="artifact_properties_ibfk_1">
+        <columns>artifact_id</columns>
+        <ref-key>~.artifacts.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="77" parent="6" name="id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(36)</data-type>
+      </column>
+      <column id="78" parent="6" name="artifact_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(36)</data-type>
+      </column>
+      <column id="79" parent="6" name="value">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="80" parent="6" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="81" parent="6" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <index id="82" parent="6" name="ix_artifact_tags_artifact_id">
+        <columns>artifact_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="83" parent="6" name="ix_artifact_tags_artifact_id_tag_value">
+        <columns>artifact_id
+value</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="84" parent="6" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="85" parent="6" name="artifact_tags_ibfk_1">
+        <columns>artifact_id</columns>
+        <ref-key>~.artifacts.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="86" parent="7" name="id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(36)</data-type>
+      </column>
+      <column id="87" parent="7" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="88" parent="7" name="type_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="89" parent="7" name="type_version_prefix">
+        <mandatory>1</mandatory>
+        <data-type>bigint(20)</data-type>
+      </column>
+      <column id="90" parent="7" name="type_version_suffix">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="91" parent="7" name="type_version_meta">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="92" parent="7" name="version_prefix">
+        <mandatory>1</mandatory>
+        <data-type>bigint(20)</data-type>
+      </column>
+      <column id="93" parent="7" name="version_suffix">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="94" parent="7" name="version_meta">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="95" parent="7" name="description">
+        <data-type>text</data-type>
+      </column>
+      <column id="96" parent="7" name="visibility">
+        <mandatory>1</mandatory>
+        <data-type>varchar(32)</data-type>
+      </column>
+      <column id="97" parent="7" name="state">
+        <mandatory>1</mandatory>
+        <data-type>varchar(32)</data-type>
+      </column>
+      <column id="98" parent="7" name="owner">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="99" parent="7" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="100" parent="7" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="101" parent="7" name="deleted_at">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="102" parent="7" name="published_at">
+        <data-type>datetime</data-type>
+      </column>
+      <index id="103" parent="7" name="ix_artifact_name_and_version">
+        <columns>name
+version_prefix
+version_suffix</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="104" parent="7" name="ix_artifact_owner">
+        <columns>owner</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="105" parent="7" name="ix_artifact_state">
+        <columns>state</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="106" parent="7" name="ix_artifact_type">
+        <columns>type_name
+type_version_prefix
+type_version_suffix</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="107" parent="7" name="ix_artifact_visibility">
+        <columns>visibility</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="108" parent="7" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="109" parent="8" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="110" parent="8" name="image_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(36)</data-type>
+      </column>
+      <column id="111" parent="8" name="value">
+        <mandatory>1</mandatory>
+        <data-type>text</data-type>
+      </column>
+      <column id="112" parent="8" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="113" parent="8" name="updated_at">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="114" parent="8" name="deleted_at">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="115" parent="8" name="deleted">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)</data-type>
+      </column>
+      <column id="116" parent="8" name="meta_data">
+        <data-type>text</data-type>
+      </column>
+      <column id="117" parent="8" name="status">
+        <mandatory>1</mandatory>
+        <data-type>varchar(30)</data-type>
+        <default-expression>&apos;active&apos;</default-expression>
+      </column>
+      <index id="118" parent="8" name="ix_image_locations_deleted">
+        <columns>deleted</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="119" parent="8" name="ix_image_locations_image_id">
+        <columns>image_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="120" parent="8" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="121" parent="8" name="image_locations_ibfk_1">
+        <columns>image_id</columns>
+        <ref-key>~.images.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="122" parent="9" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="123" parent="9" name="image_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(36)</data-type>
+      </column>
+      <column id="124" parent="9" name="member">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="125" parent="9" name="can_share">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)</data-type>
+      </column>
+      <column id="126" parent="9" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="127" parent="9" name="updated_at">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="128" parent="9" name="deleted_at">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="129" parent="9" name="deleted">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)</data-type>
+      </column>
+      <column id="130" parent="9" name="status">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)</data-type>
+        <default-expression>&apos;pending&apos;</default-expression>
+      </column>
+      <index id="131" parent="9" name="image_members_image_id_member_deleted_at_key">
+        <columns>image_id
+member
+deleted_at</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <index id="132" parent="9" name="ix_image_members_deleted">
+        <columns>deleted</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="133" parent="9" name="ix_image_members_image_id">
+        <columns>image_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="134" parent="9" name="ix_image_members_image_id_member">
+        <columns>image_id
+member</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="135" parent="9" name="image_members_image_id_member_deleted_at_key">
+        <columns>image_id
+member
+deleted_at</columns>
+        <underlying-index>image_members_image_id_member_deleted_at_key</underlying-index>
+      </key>
+      <key id="136" parent="9" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="137" parent="9" name="image_members_ibfk_1">
+        <columns>image_id</columns>
+        <ref-key>~.images.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="138" parent="10" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="139" parent="10" name="image_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(36)</data-type>
+      </column>
+      <column id="140" parent="10" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="141" parent="10" name="value">
+        <data-type>text</data-type>
+      </column>
+      <column id="142" parent="10" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="143" parent="10" name="updated_at">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="144" parent="10" name="deleted_at">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="145" parent="10" name="deleted">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)</data-type>
+      </column>
+      <index id="146" parent="10" name="ix_image_properties_deleted">
+        <columns>deleted</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="147" parent="10" name="ix_image_properties_image_id">
+        <columns>image_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="148" parent="10" name="ix_image_properties_image_id_name">
+        <columns>image_id
+name</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="149" parent="10" name="ix_image_properties_image_id_name">
+        <columns>image_id
+name</columns>
+        <underlying-index>ix_image_properties_image_id_name</underlying-index>
+      </key>
+      <key id="150" parent="10" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="151" parent="10" name="image_properties_ibfk_1">
+        <columns>image_id</columns>
+        <ref-key>~.images.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="152" parent="11" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="153" parent="11" name="image_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(36)</data-type>
+      </column>
+      <column id="154" parent="11" name="value">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="155" parent="11" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="156" parent="11" name="updated_at">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="157" parent="11" name="deleted_at">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="158" parent="11" name="deleted">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)</data-type>
+      </column>
+      <index id="159" parent="11" name="ix_image_tags_image_id">
+        <columns>image_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="160" parent="11" name="ix_image_tags_image_id_tag_value">
+        <columns>image_id
+value</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="161" parent="11" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="162" parent="11" name="image_tags_ibfk_1">
+        <columns>image_id</columns>
+        <ref-key>~.images.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="163" parent="12" name="id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(36)</data-type>
+      </column>
+      <column id="164" parent="12" name="name">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="165" parent="12" name="size">
+        <data-type>bigint(20)</data-type>
+      </column>
+      <column id="166" parent="12" name="status">
+        <mandatory>1</mandatory>
+        <data-type>varchar(30)</data-type>
+      </column>
+      <column id="167" parent="12" name="is_public">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)</data-type>
+      </column>
+      <column id="168" parent="12" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="169" parent="12" name="updated_at">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="170" parent="12" name="deleted_at">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="171" parent="12" name="deleted">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)</data-type>
+      </column>
+      <column id="172" parent="12" name="disk_format">
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="173" parent="12" name="container_format">
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="174" parent="12" name="checksum">
+        <data-type>varchar(32)</data-type>
+      </column>
+      <column id="175" parent="12" name="owner">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="176" parent="12" name="min_disk">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="177" parent="12" name="min_ram">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="178" parent="12" name="protected">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="179" parent="12" name="virtual_size">
+        <data-type>bigint(20)</data-type>
+      </column>
+      <index id="180" parent="12" name="checksum_image_idx">
+        <columns>checksum</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="181" parent="12" name="ix_images_deleted">
+        <columns>deleted</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="182" parent="12" name="ix_images_is_public">
+        <columns>is_public</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="183" parent="12" name="owner_image_idx">
+        <columns>owner</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="184" parent="12" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="185" parent="13" name="resource_type_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="186" parent="13" name="namespace_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="187" parent="13" name="properties_target">
+        <data-type>varchar(80)</data-type>
+      </column>
+      <column id="188" parent="13" name="prefix">
+        <data-type>varchar(80)</data-type>
+      </column>
+      <column id="189" parent="13" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="190" parent="13" name="updated_at">
+        <data-type>datetime</data-type>
+      </column>
+      <index id="191" parent="13" name="ix_metadef_ns_res_types_namespace_id">
+        <columns>namespace_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="192" parent="13" name="PRIMARY">
+        <columns>resource_type_id
+namespace_id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="193" parent="13" name="metadef_namespace_resource_types_ibfk_1">
+        <columns>resource_type_id</columns>
+        <ref-key>~.metadef_resource_types.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="194" parent="13" name="metadef_namespace_resource_types_ibfk_2">
+        <columns>namespace_id</columns>
+        <ref-key>~.metadef_namespaces.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="195" parent="14" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="196" parent="14" name="namespace">
+        <mandatory>1</mandatory>
+        <data-type>varchar(80)</data-type>
+      </column>
+      <column id="197" parent="14" name="display_name">
+        <data-type>varchar(80)</data-type>
+      </column>
+      <column id="198" parent="14" name="description">
+        <data-type>text</data-type>
+      </column>
+      <column id="199" parent="14" name="visibility">
+        <data-type>varchar(32)</data-type>
+      </column>
+      <column id="200" parent="14" name="protected">
+        <data-type>tinyint(1)</data-type>
+      </column>
+      <column id="201" parent="14" name="owner">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="202" parent="14" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="203" parent="14" name="updated_at">
+        <data-type>datetime</data-type>
+      </column>
+      <index id="204" parent="14" name="ix_metadef_namespaces_owner">
+        <columns>owner</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="205" parent="14" name="uq_metadef_namespaces_namespace">
+        <columns>namespace</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="206" parent="14" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="207" parent="14" name="uq_metadef_namespaces_namespace">
+        <columns>namespace</columns>
+        <underlying-index>uq_metadef_namespaces_namespace</underlying-index>
+      </key>
+      <column id="208" parent="15" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="209" parent="15" name="namespace_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="210" parent="15" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(80)</data-type>
+      </column>
+      <column id="211" parent="15" name="description">
+        <data-type>text</data-type>
+      </column>
+      <column id="212" parent="15" name="required">
+        <data-type>text</data-type>
+      </column>
+      <column id="213" parent="15" name="json_schema">
+        <mandatory>1</mandatory>
+        <data-type>text</data-type>
+      </column>
+      <column id="214" parent="15" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="215" parent="15" name="updated_at">
+        <data-type>datetime</data-type>
+      </column>
+      <index id="216" parent="15" name="ix_metadef_objects_name">
+        <columns>name</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="217" parent="15" name="uq_metadef_objects_namespace_id_name">
+        <columns>namespace_id
+name</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="218" parent="15" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="219" parent="15" name="uq_metadef_objects_namespace_id_name">
+        <columns>namespace_id
+name</columns>
+        <underlying-index>uq_metadef_objects_namespace_id_name</underlying-index>
+      </key>
+      <foreign-key id="220" parent="15" name="metadef_objects_fk_1">
+        <columns>namespace_id</columns>
+        <ref-key>~.metadef_namespaces.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="221" parent="16" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="222" parent="16" name="namespace_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="223" parent="16" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(80)</data-type>
+      </column>
+      <column id="224" parent="16" name="json_schema">
+        <mandatory>1</mandatory>
+        <data-type>text</data-type>
+      </column>
+      <column id="225" parent="16" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="226" parent="16" name="updated_at">
+        <data-type>datetime</data-type>
+      </column>
+      <index id="227" parent="16" name="ix_metadef_properties_name">
+        <columns>name</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="228" parent="16" name="uq_metadef_properties_namespace_id_name">
+        <columns>namespace_id
+name</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="229" parent="16" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="230" parent="16" name="uq_metadef_properties_namespace_id_name">
+        <columns>namespace_id
+name</columns>
+        <underlying-index>uq_metadef_properties_namespace_id_name</underlying-index>
+      </key>
+      <foreign-key id="231" parent="16" name="metadef_properties_fk_1">
+        <columns>namespace_id</columns>
+        <ref-key>~.metadef_namespaces.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="232" parent="17" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="233" parent="17" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(80)</data-type>
+      </column>
+      <column id="234" parent="17" name="protected">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)</data-type>
+      </column>
+      <column id="235" parent="17" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="236" parent="17" name="updated_at">
+        <data-type>datetime</data-type>
+      </column>
+      <index id="237" parent="17" name="uq_metadef_resource_types_name">
+        <columns>name</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="238" parent="17" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="239" parent="17" name="uq_metadef_resource_types_name">
+        <columns>name</columns>
+        <underlying-index>uq_metadef_resource_types_name</underlying-index>
+      </key>
+      <column id="240" parent="18" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="241" parent="18" name="namespace_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="242" parent="18" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(80)</data-type>
+      </column>
+      <column id="243" parent="18" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="244" parent="18" name="updated_at">
+        <data-type>datetime</data-type>
+      </column>
+      <index id="245" parent="18" name="ix_metadef_tags_name">
+        <columns>name</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="246" parent="18" name="uq_metadef_tags_namespace_id_name">
+        <columns>namespace_id
+name</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="247" parent="18" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="248" parent="18" name="uq_metadef_tags_namespace_id_name">
+        <columns>namespace_id
+name</columns>
+        <underlying-index>uq_metadef_tags_namespace_id_name</underlying-index>
+      </key>
+      <foreign-key id="249" parent="18" name="metadef_tags_fk_1">
+        <columns>namespace_id</columns>
+        <ref-key>~.metadef_namespaces.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="250" parent="19" name="repository_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(250)</data-type>
+      </column>
+      <column id="251" parent="19" name="repository_path">
+        <data-type>text</data-type>
+      </column>
+      <column id="252" parent="19" name="version">
+        <data-type>int(11)</data-type>
+      </column>
+      <key id="253" parent="19" name="PRIMARY">
+        <columns>repository_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="254" parent="20" name="task_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(36)</data-type>
+      </column>
+      <column id="255" parent="20" name="input">
+        <data-type>text</data-type>
+      </column>
+      <column id="256" parent="20" name="result">
+        <data-type>text</data-type>
+      </column>
+      <column id="257" parent="20" name="message">
+        <data-type>text</data-type>
+      </column>
+      <key id="258" parent="20" name="PRIMARY">
+        <columns>task_id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="259" parent="20" name="task_info_ibfk_1">
+        <columns>task_id</columns>
+        <ref-key>~.tasks.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="260" parent="21" name="id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(36)</data-type>
+      </column>
+      <column id="261" parent="21" name="type">
+        <mandatory>1</mandatory>
+        <data-type>varchar(30)</data-type>
+      </column>
+      <column id="262" parent="21" name="status">
+        <mandatory>1</mandatory>
+        <data-type>varchar(30)</data-type>
+      </column>
+      <column id="263" parent="21" name="owner">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="264" parent="21" name="expires_at">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="265" parent="21" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="266" parent="21" name="updated_at">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="267" parent="21" name="deleted_at">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="268" parent="21" name="deleted">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)</data-type>
+      </column>
+      <index id="269" parent="21" name="ix_tasks_deleted">
+        <columns>deleted</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="270" parent="21" name="ix_tasks_owner">
+        <columns>owner</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="271" parent="21" name="ix_tasks_status">
+        <columns>status</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="272" parent="21" name="ix_tasks_type">
+        <columns>type</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="273" parent="21" name="ix_tasks_updated_at">
+        <columns>updated_at</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="274" parent="21" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
+</component>
