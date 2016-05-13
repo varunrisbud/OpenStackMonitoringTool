@@ -43,9 +43,11 @@
 <div class="container-fluid">
     <div class="col-sm-3 col-md-2 sidebar">
         <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+            <li class="active"><a href="/">Dashboard<span class="sr-only">(current)</span></a></li>
+            <li><a href="/hostmap">Host Health Status</a></li>
             <li><a href="reports">Reports</a></li>
             <li><a href="openstackaccessmap">Analytics</a></li>
+            <li><a href="/proactiveTests">Pro-active Workflow Tests</a></li>
         </ul>
     </div>
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -166,6 +168,38 @@
                         </table>
                     </div>
                 </div>
+
+            </div>
+
+            <div class="panel panel-default" ng-click="getValue('imagechecksum')">
+                <div class="panel-heading" role="tab" id="headingFive">
+                    <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                           href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            Image Verification Warnings
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                    <div class="panel-body">
+                        <label>Number of Warnings:</label>{{ warningsCount }}
+                        <table st-table="rowCollection" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>Host</th>
+                                <th>Message</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="row in rowCollection">
+                                <td>{{row._source.host}}</td>
+                                <td>{{row._source.message}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
