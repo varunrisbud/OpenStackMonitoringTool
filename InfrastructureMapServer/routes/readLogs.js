@@ -28,7 +28,7 @@ router.get('/warnings/:componentIndex', function (req, res, data) {
                             {
                                 range: {
                                     "@timestamp": {
-                                        gte: "now-45m"
+                                        gte: "now-7d"
                                     }
                                 }
                             }
