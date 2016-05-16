@@ -62,35 +62,24 @@
                 <div class="row">
                     <table style="float: left; width:90%">
                         <tr>
-                            <th>Controller</th>
-                            <th colspan="2"></th>
-
-
-                        </tr>
-                        <tr>
                             <td>Property</td>
                             <td>Value</td>
-
-                        </tr>
-                        <tr>
-                            <td> Host Name</td>
-                            <td>Controller</td>
                         </tr>
                         <tr>
                             <td>CPU Usage</td>
-                            <td>26.93</td>
+                            <td>{{cpu_controller| number:2}}</td>
                         </tr>
                         <tr>
                             <td>Memory Usage</td>
-                            <td>96.02</td>
+                            <td>{{memory_controller| number:2}}</td>
                         </tr>
                         <tr>
                             <td>Disk Read Rate</td>
-                            <td>27.9</td>
+                            <td>{{disk_read_controller| number:2}}</td>
                         </tr>
                         <tr>
                             <td>Disk Write Rate</td>
-                            <td>90.05</td>
+                            <td>{{disk_write_controller| number:2}}</td>
                         </tr>
                     </table>
                 </div>
@@ -109,33 +98,25 @@
                 <div class="row">
                     <table style="float: left; width:90%">
                         <tr>
-                            <th>Compute</th>
-                            <th colspan="2"></th>
-                        </tr>
-                        <tr>
                             <td>Property</td>
                             <td>Value</td>
 
                         </tr>
                         <tr>
-                            <td> Host Name</td>
-                            <td>Compute</td>
-                        </tr>
-                        <tr>
                             <td>CPU Usage</td>
-                            <td>28.24</td>
+                            <td>{{cpu_compute| number:2}}</td>
                         </tr>
                         <tr>
                             <td>Memory Usage</td>
-                            <td>98.67</td>
+                            <td>{{memory_compute| number:2}}</td>
                         </tr>
                         <tr>
                             <td>Disk Read Rate</td>
-                            <td>26.95</td>
+                            <td>{{disk_read_compute| number:2}}</td>
                         </tr>
                         <tr>
                             <td>Disk Write Rate</td>
-                            <td>94.34</td>
+                            <td>{{disk_write_compute | number:2}}</td>
                         </tr>
                     </table>
                 </div>

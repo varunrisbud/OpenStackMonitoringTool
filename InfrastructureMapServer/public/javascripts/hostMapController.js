@@ -6,24 +6,17 @@ angular.module('opsmonitor', [])
         $scope.myData = null;
         $http.get('http://130.65.159.170/status/hosthealth').success(function (res) {
             $scope.myData = res;
+            console.log(res);
 
+            $scope.cpu_controller = res[0].lastHourAvgCpuUsage;
+            $scope.memory_controller = res[0].lastHourAvgMemoryUsage;
+            $scope.disk_read_controller = res[0].lastHourAvgDiskReadRate;
+            $scope.disk_write_controller = res[0].lastHourAvgDiskWriteRate;
 
-            var cpuUsage = res[0].cpuUsage[0] + res[0].cpuUsage[1] + res[0].cpuUsage[2] + res[0].cpuUsage[3] + res[0].cpuUsage[4];
-            var memoryusage = /*TODO*/
-
-            $scope.host_name = res[0].hostName;
-            $scope.cpu_controller = cpuUsage;
-            $scope.memory_controller = res[0].memoryUsage[0];
-            $scope.disk_read_controller = res[0].diskReadRate[0];
-            $scope.disk_write_controller = res[0].diskWriteRate[0];
-            //console.log(res.health[0].HOST_NAME);
-            //
-            //$scope.host2_name = res.health[1].HOST_NAME;
-            //$scope.compute_health_status = res.health[1].COMPUTE_HEALTH_STATUS;
-            //$scope.cpu_compute = res.health[1].CPU_COMPUTE;
-            //$scope.memory_compute = res.health[1].MEMORY_COMPUTE;
-            //$scope.disk_read_compute = res.health[1].DISK_READ_COMPUTE;
-            //$scope.disk_write_compute = res.health[1].DISK_WRITE_COMPUTE;
+            $scope.cpu_compute = res[1].lastHourAvgCpuUsage;
+            $scope.memory_compute = res[1].lastHourAvgMemoryUsage;
+            $scope.disk_read_compute = res[1].lastHourAvgDiskReadRate;
+            $scope.disk_write_compute = res[1].lastHourAvgDiskWriteRate;
 
         });
     });
